@@ -20,7 +20,8 @@ if not http then
 end
 
 function GetData(address)
-    local path = string.gsub(string.gsub(address, "https://github.com/", ""), "blob/", "")
+    local path = string.gsub(string.gsub(string.gsub(address, "https://github.com/", ""),
+        "https://raw.githubusercontent.com/", ""), "blob/", "")
 
     local response, err = http.get("https://raw.githubusercontent.com/" .. path)
 
