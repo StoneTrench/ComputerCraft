@@ -3,8 +3,11 @@ os.loadAPI("./LSON.lua")
 local PublicPort = 6124
 local modem = peripheral.find("modem") or printError("No modem attached", 0)
 
-local function CreatePacket(header)
-    print(LSON.Serialize(LSON.Deserialize(LSON.Serialize(header))));
+local function CreatePacket(header, data)
+    return LSON.Serialize({
+        header = header,
+        data = data
+    })
 end
 
 local function StartListening(port)
@@ -18,7 +21,12 @@ local function StartListening(port)
     until channel == port
 
     modem.close(port)
-    return message;
+    return LSON.Deserialize(message);
 end
 
-CreatePacket({ data = "Pingas", count = 100, no = true, value = nil, header = { name = "creeper", copy = { name = "creeper" }} });
+local function Send(port, packet)
+    modem.transmit(port, port, packet);
+end
+
+Send(PublicPort, CreatePacket({ data = "Pingas", count = 100, no = true, value = nil,
+    header = { name = "creeper", copy = { name = "creeper" } } }));
