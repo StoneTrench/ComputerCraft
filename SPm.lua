@@ -28,8 +28,7 @@ local function Encrypt(str, key)
     local result = ""
 
     for i = 1, #str, 1 do
-        local number = str:byte(i) ~ key;
-        result = result .. "," .. tostring(number)
+        result = result .. "," .. tostring(bit.bxor(str:byte(i), key))
     end
 
     return result;
@@ -39,7 +38,7 @@ local function Decrypt(data, key)
     local result = "";
 
     for c in data:gmatch(",(.*),") do
-        result = result .. tonumber(c ~ key):char()
+        result = result .. bit.bxor(tonumber(c), key):char()
     end
 
     return result;
