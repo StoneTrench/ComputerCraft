@@ -28,7 +28,7 @@ local function Encrypt(str, key)
     local result = ""
 
     for i = 1, #str, 1 do
-        result = result .. "," .. str:byte(i)
+        result = result .. "," .. (str:byte(i) ~ key)
     end
 
     return result;
@@ -38,7 +38,7 @@ local function Decrypt(data, key)
     local result = "";
 
     for c in data:gmatch(",(.*),") do
-        result = result .. c:char()
+        result = result .. tonumber(c ~ key):char()
     end
 
     return result;

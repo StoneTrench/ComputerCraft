@@ -18,7 +18,7 @@ local function Decrypt(data, key)
     local result = "";
 
     for c in data:gmatch(",(.*),") do
-        result = result .. c:char()
+        result = result .. tonumber(c ~ key):char()
     end
 
     return result;
