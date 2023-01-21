@@ -11,7 +11,7 @@ for (let l = 0; l < links.length; l++) {
     script += `
 if fs.exists(shell.resolve("${files[l]}")) then
     shell.execute("delete ${files[l]}")
-    shell.execute("git get ${links[l]} ${files[l]}")
+    shell.execute("./git get ${links[l]} ${files[l]}")
 end
 `
 }
