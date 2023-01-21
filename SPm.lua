@@ -28,7 +28,8 @@ local function Encrypt(str, key)
     local result = ""
 
     for i = 1, #str, 1 do
-        result = result .. "," .. (str:byte(i) ~ key)
+        local number = str:byte(i) ~ key;
+        result = result .. "," .. tostring(number)
     end
 
     return result;
