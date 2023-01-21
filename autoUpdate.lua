@@ -1,35 +1,43 @@
+local sPath = ""
 
-if fs.exists(shell.resolve("fax.lua")) then
-    shell.execute("delete fax.lua")
+sPath = shell.resolve("fax.lua")
+if fs.exists(sPath) then
+    shell.execute("delete"..sPath)
     shell.execute("./git get https://github.com/StoneTrench/ComputerCraft/blob/master/fax.lua fax.lua")
 end
 
-if fs.exists(shell.resolve("git.lua")) then
-    shell.execute("delete git.lua")
+sPath = shell.resolve("git.lua")
+if fs.exists(sPath) then
+    shell.execute("delete"..sPath)
     shell.execute("./git get https://github.com/StoneTrench/ComputerCraft/blob/master/git.lua git.lua")
 end
 
-if fs.exists(shell.resolve("LSON.lua")) then
-    shell.execute("delete LSON.lua")
+sPath = shell.resolve("LSON.lua")
+if fs.exists(sPath) then
+    shell.execute("delete"..sPath)
     shell.execute("./git get https://github.com/StoneTrench/ComputerCraft/blob/master/LSON.lua LSON.lua")
 end
 
-if fs.exists(shell.resolve("quickPull.lua")) then
-    shell.execute("delete quickPull.lua")
+sPath = shell.resolve("quickPull.lua")
+if fs.exists(sPath) then
+    shell.execute("delete"..sPath)
     shell.execute("./git get https://github.com/StoneTrench/ComputerCraft/blob/master/quickPull.lua quickPull.lua")
 end
 
-if fs.exists(shell.resolve("SERIALIZER.lua")) then
-    shell.execute("delete SERIALIZER.lua")
+sPath = shell.resolve("SERIALIZER.lua")
+if fs.exists(sPath) then
+    shell.execute("delete"..sPath)
     shell.execute("./git get https://github.com/StoneTrench/ComputerCraft/blob/master/SERIALIZER.lua SERIALIZER.lua")
 end
 
-if fs.exists(shell.resolve("SPm.lua")) then
-    shell.execute("delete SPm.lua")
+sPath = shell.resolve("SPm.lua")
+if fs.exists(sPath) then
+    shell.execute("delete"..sPath)
     shell.execute("./git get https://github.com/StoneTrench/ComputerCraft/blob/master/SPm.lua SPm.lua")
 end
 
-if fs.exists(shell.resolve("test.lua")) then
-    shell.execute("delete test.lua")
+sPath = shell.resolve("test.lua")
+if fs.exists(sPath) then
+    shell.execute("delete"..sPath)
     shell.execute("./git get https://github.com/StoneTrench/ComputerCraft/blob/master/test.lua test.lua")
 end
