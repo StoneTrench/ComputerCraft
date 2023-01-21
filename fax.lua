@@ -10,7 +10,7 @@ end
 local event, side, channel, replyChannel, message, distance
 repeat
     event, side, channel, replyChannel, message, distance = os.pullEvent("modem_message")
-until channel == 43
+until channel == FaxPort
 
 printer.newPage()
 printer.write(message)
