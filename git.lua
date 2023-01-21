@@ -3,6 +3,7 @@ local function printUsage()
     print("Usages:")
     print(programName .. " get <code> <filename>")
     print(programName .. " run <code> <arguments>")
+    print(programName .. " clone <code>")
 end
 
 local args = { ... }
@@ -74,6 +75,8 @@ elseif args[1] == "run" then
             printError(msg)
         end
     end
+elseif args[1] == "clone" then
+    print("Not implemented!")
 else
     printUsage()
     return
