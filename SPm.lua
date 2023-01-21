@@ -37,7 +37,7 @@ end
 local function Decrypt(data, key)
     local result = "";
 
-    for c in data:gmatch(",(.-),") do
+    for c in data:gmatch("([^,]+)") do
         result = result .. tostring(bit.bxor(tonumber(c), key)):char()
     end
 
@@ -45,8 +45,13 @@ local function Decrypt(data, key)
 end
 
 local function Send(port, packet)
+    if modem == nil then
+        print(packet)
+        return
+    end
+
     modem.transmit(port, port, packet);
 end
 
-Send(PublicPort, Encrypt(CreatePacket({ data = "Pingas", count = 100, no = true, value = nil,
-    header = { name = "creeper", copy = { name = "creeper" } } }), 42));
+Send(PublicPort, Decrypt(Encrypt(CreatePacket({ data = "Pingas", count = 100, no = true, value = nil,
+    header = { name = "creeper", copy = { name = "creeper" } } }), 42), 42));
