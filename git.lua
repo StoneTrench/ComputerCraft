@@ -1,7 +1,7 @@
 local function printUsage()
     local programName = arg[0] or fs.getName(shell.getRunningProgram())
     print("Usages:")
-    print(programName .. " get <code> <filename>")
+    print(programName .. " get <code> <filename> <args (-f)>")
     print(programName .. " run <code> <arguments>")
     print(programName .. " clone <code>")
 end
@@ -41,6 +41,15 @@ function GetData(address)
     end
 end
 
+local function contains(table, val)
+    for i = 1, #table do
+        if table[i] == val then
+            return true
+        end
+    end
+    return false
+end
+
 if args[1] == "get" then
     if #args < 3 then
         printUsage()
@@ -50,7 +59,11 @@ if args[1] == "get" then
     -- Determine file to download
     local sPath = shell.resolve(args[3])
     if fs.exists(sPath) then
-        printError("File already exists!")
+        if contains(args, "-f") then
+            shell.execute("delete " .. sPath);
+        else
+            printError("File already exists!")
+        end
         return;
     end
 
