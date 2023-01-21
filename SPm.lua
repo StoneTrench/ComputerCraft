@@ -24,9 +24,29 @@ local function StartListening(port)
     return LSON.Deserialize(message);
 end
 
+local function Encrypt(str, key)
+    local result = ""
+
+    for i = 1, #str, 1 do
+        result = result .. "," .. str:byte(i)
+    end
+
+    return result;
+end
+
+local function Decrypt(data, key)
+    local result = "";
+
+    for c in data:gmatch(",(.*),") do
+        result = result .. c:char()
+    end
+
+    return result;
+end
+
 local function Send(port, packet)
     modem.transmit(port, port, packet);
 end
 
-Send(PublicPort, CreatePacket({ data = "Pingas", count = 100, no = true, value = nil,
-    header = { name = "creeper", copy = { name = "creeper" } } }));
+Send(PublicPort, Encrypt(CreatePacket({ data = "Pingas", count = 100, no = true, value = nil,
+    header = { name = "creeper", copy = { name = "creeper" } } }), 42));
