@@ -38,7 +38,7 @@ local function Decrypt(data, key)
     local result = "";
 
     for c in data:gmatch(",(.-),") do
-        result = result .. bit.bxor(tonumber(c), key):char()
+        result = result .. tostring(bit.bxor(tonumber(c), key)):char()
     end
 
     return result;
