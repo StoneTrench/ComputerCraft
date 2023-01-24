@@ -1,11 +1,12 @@
 local radar = peripheral.find("radar");
 
 local range = 50;
+local 
 local target = nil;
 
-function FindTargetIndex(ships, weight)
+function FindTargetIndex(ships, mass)
     for i, value in ipairs(ships) do
-        if value.weight == weight then
+        if math.floor(value.weight / 10) == math.floor(mass / 10) then
             return i;
         end
     end
@@ -14,12 +15,14 @@ function FindTargetIndex(ships, weight)
 end
 
 while true do
-    local ships = radar.scan(range);
+    local ships = { radar.scan(range) };
+
+    print(ships[2])
 
     if target == nil then
         target = ships[2];
     else
-        local index = FindTargetIndex(ships, target.weight)
+        local index = FindTargetIndex(ships, target.mass)
 
         if not index == -1 then
             local movementVector = {
