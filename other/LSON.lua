@@ -1,6 +1,6 @@
-function Serialize(table, Spaces, LineEnd)
+function LSON_Serialize(table, Spaces)
     if Spaces == nil then Spaces = "   "; end
-    if LineEnd == nil then LineEnd = "\n"; end
+    local LineEnd = "\n";
 
     local indentCounter = 0;
 
@@ -41,7 +41,7 @@ function Serialize(table, Spaces, LineEnd)
     return STable(table)
 end
 
-function Deserialize(lson)
+function LSON_Deserialize(lson)
 
     function DTable(d)
         local result = {
@@ -79,31 +79,36 @@ function Deserialize(lson)
     function ConverToObject(dTable)
         local result = {};
 
-        local keys = dTable.data:gmatch("\"(.-)\":")
-        local values = dTable.data:gmatch("\":(.-),\n")
+        local keyPattern = "[^:][^%S+]\"(.-)\":";
+
+        local keys = dTable.data:gmatch(keyPattern)
+        local values = dTable.data:gsub(keyPattern, ""):gmatch("(.-),")
 
         for key in keys do
             local val = values();
 
+            if not (val == nil) then
 
-            local childIndex = val:match("{(.)}");
+                local childIndex = val:match("{(.)}");
 
-            if childIndex == nil then
-                local valText = val:match("\"(.*)\"")
+                if childIndex == nil then
+                    local valText = val:match("\"(.*)\"")
 
-                if valText == nil then
-                    local valNumber = tonumber(val);
-                    if valNumber == nil then
-                        local valBool = val:match("true") == "true";
-                        result[key] = valBool;
+                    if valText == nil then
+                        local valNumber = tonumber(val);
+                        if valNumber == nil then
+                            local valBool = val:match("true") == "true";
+                            result[key] = valBool;
+                        else
+                            result[key] = valNumber;
+                        end
                     else
-                        result[key] = valNumber;
+                        result[key] = valText
                     end
                 else
-                    result[key] = valText
+                    result[key] = ConverToObject(DTable(dTable.children[tonumber(childIndex)]));
                 end
-            else
-                result[key] = ConverToObject(DTable(dTable.children[tonumber(childIndex)]));
+
             end
         end
 

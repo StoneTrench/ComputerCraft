@@ -1,0 +1,3 @@
+require("gui")
+
+GUI.WriteAt()

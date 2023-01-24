@@ -1,0 +1,5 @@
+{
+    "name": "LScode",
+    "version": "1.0",
+    "entrypoint": "main.lua"
+}

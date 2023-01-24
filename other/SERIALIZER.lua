@@ -32,7 +32,7 @@ local function exportstring(s)
 end
 
 --// The Save Function
-function Serialize(tbl)
+function LSON_Serialize(tbl)
     local charS, charE = "   ", "\n"
 
     local result = ""
@@ -107,7 +107,7 @@ function Serialize(tbl)
 end
 
 --// The Load Function
-function Deserialize(data)
+function LSON_Deserialize(data)
     local ftables, err = loadfile(sfile)
     if err then return _, err end
     local tables = data()
