@@ -105,8 +105,12 @@ local function M_PROTOCOL_FUNC()
     end
 
     return {
-        getDefaultSearchChannel = function()
-            return 65535;
+        getDefaultChannels = function()
+            return {
+                global = 0,
+                search = 65535,
+                droneGlobal = 65534,
+            };
         end,
         Ping = Ping,
     }

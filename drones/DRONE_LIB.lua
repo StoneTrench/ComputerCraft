@@ -23,8 +23,37 @@ if args[1] == "update" then
     return;
 end
 
+local peripherals = {
+    modem = peripheral.find("modem"),
+    helm = peripheral.find("ship_helm"),
+    reader = peripheral.find("ship_reader"),
+}
+
+local defaultChannels = M_PROTOCOL.getDefaultSearchChannel();
+local parentChannel = nil;
+
+local function PingParent(data)
+    return M_PROTOCOL.Ping(peripherals.modem, parentChannel, data, 0.5)
+end
+
+local function SearchForParent()
+    local result = M_PROTOCOL.Ping(peripherals.modem, defaultChannels.search, {
+        os.getComputerID(),
+        peripherals.reader.getShipID(),
+        os.time()
+    }, 1)
+
+    if result then
+        parentChannel = result[1];
+    end
+end
+
 while true do
-    print(textutils.serialiseJSON(settings))
-    print(M_PROTOCOL.Ping(peripheral.wrap("top"), M_PROTOCOL.getDefaultSearchChannel(), "Hello", 0.5) or "nil")
+    if not parentChannel then
+        SearchForParent()
+    else
+        PingParent(peripherals.reader.getWorldspacePosition())
+    end
+
     sleep(0.5);
 end
