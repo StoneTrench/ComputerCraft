@@ -112,6 +112,17 @@ M_PROTOCOL = M_PROTOCOL_FUNC();
 
 local function UTILITY_FUNC()
     return {
+        eval = function(lua_code, ...)
+            local func, err = load(lua_code, "lua_code", "t", _ENV)
+            if not func then
+                error(err)
+                return
+            end
+            local success, msg = pcall(func, select(3, ...))
+            if not success then
+                error(msg)
+            end
+        end,
         PullEventTimeout = function(event, sec)
             local result = nil
 
@@ -279,3 +290,7 @@ local function UTILITY_FUNC()
 end
 
 UTILITY = UTILITY_FUNC();
+
+
+
+
