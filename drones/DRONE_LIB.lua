@@ -1,5 +1,7 @@
 require("LIBS")
 
+print("Hello")
+
 local args = { ... }
 
 if args[1] == "update" then
