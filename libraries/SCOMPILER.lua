@@ -133,17 +133,21 @@ local function S_COMPILER_FUNC()
         end
 
         local code_noString_noObject = code_noString;
+
         for index, value in ipairs(result) do
-            code_noString_noObject = UTILITY.string.trim(code_noString_noObject:gsub(value.data, ""))
+            code_noString_noObject = code_noString_noObject:gsub(value.data, "")
         end
 
         print(code_noString_noObject)
 
         -- Handles (variable, declaration) parsing
-        while (true) do
-            UTILITY.string.findIndex(code_noString, "=", 1, true)()
-            break;
-        end
+        local variables = FindIndexesEncompasedByPattern(code_noString_noObject, "var(.*)[;,%)]", false)
+        print(textutils.serialiseJSON(variables))
+        print(UTILITY.table.reduce(UTILITY.table.map(variables, function(e)
+            return code_noString_noObject:sub(e, e + 3)
+        end), function(a, b)
+            return a .. b
+        end))
 
         return result;
     end
@@ -167,6 +171,6 @@ S_COMPILER = S_COMPILER_FUNC();
 
 -- S_COMPILER.Compile("other/git.lua")
 -- S_COMPILER.Compile("libraries/SCOMPILER.lua")
--- S_COMPILER.Compile("libraries/test/code.cs", "./TestObjects.json")
+S_COMPILER.Compile("libraries/test/code.cs", "./TestObjects.json")
 
-UTILITY.fs.writeFile("tree.json", textutils.serialiseJSON(UTILITY.fs.tree("./")))
+--UTILITY.fs.writeFile("tree.json", textutils.serialiseJSON(UTILITY.fs.tree("./")))
