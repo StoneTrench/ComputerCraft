@@ -82,7 +82,7 @@ GIT = GIT_FUNC();
 
 local function M_PROTOCOL_FUNC()
 
-    local function Ping(modem, channel, data)
+    local function Ping(modem, channel, data, timeout)
         if not modem.isOpen(channel) then
             modem.open(channel)
         end
@@ -90,10 +90,14 @@ local function M_PROTOCOL_FUNC()
         modem.transmit(channel, channel, data);
 
         -- event, side, channel, replyChannel, message, distance
-        local modem_message;
+        local modem_message = nil;
         repeat
-            modem_message = { os.pullEvent("modem_message") }
-        until modem_message[3] == channel
+            modem_message = UTILITY.PullEventTimeout("modem_message", timeout)
+        until (modem_message == nil) or (modem_message[3] == channel)
+
+        if modem_message == nil then
+            return nil;
+        end
 
         modem.close(channel)
 
@@ -101,6 +105,9 @@ local function M_PROTOCOL_FUNC()
     end
 
     return {
+        getDefaultSearchChannel = function()
+            return 65535;
+        end,
         Ping = Ping,
     }
 end
