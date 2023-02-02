@@ -99,6 +99,14 @@ local function UTILITY_FUNC()
                 end
                 return result;
             end,
+            contains = function(table, val)
+                for i = 1, #table do
+                    if table[i] == val then
+                        return true
+                    end
+                end
+                return false
+            end
         },
         string = {
             findIndex = function(str, pattern, init, plain)
@@ -135,6 +143,24 @@ local function UTILITY_FUNC()
             end,
             endsWith = function(str, text)
                 return text == "" or str:sub(- #text) == text
+            end,
+            toByteArray = function(str)
+                local result = {};
+
+                for i = 0, #str, 1 do
+                    table.insert(result, i, str:byte(i))
+                end
+
+                return result;
+            end,
+            fromByteArray = function(array)
+                local result = "";
+
+                for key, value in pairs(array) do
+                    result = result .. (tostring(value):char())
+                end
+
+                return result;
             end
         }
     }
