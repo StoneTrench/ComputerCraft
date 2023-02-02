@@ -29,7 +29,7 @@ local peripherals = {
     reader = peripheral.find("ship_reader"),
 }
 
-local defaultChannels = M_PROTOCOL.getDefaultSearchChannel();
+local defaultChannels = M_PROTOCOL.getDefaultChannels();
 local parentChannel = nil;
 
 local function PingParent(data)
