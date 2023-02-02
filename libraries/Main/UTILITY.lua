@@ -15,7 +15,7 @@ local function UTILITY_FUNC()
             local result = nil
 
             local function Event()
-                result = os.pullEvent(event)
+                result = { os.pullEvent(event) }
             end
 
             local function Timeout()

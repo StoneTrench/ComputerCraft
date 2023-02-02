@@ -90,7 +90,7 @@ local function M_PROTOCOL_FUNC()
         modem.transmit(channel, channel, data);
 
         -- event, side, channel, replyChannel, message, distance
-        local modem_message = nil;
+        local modem_message = -1;
         repeat
             modem_message = UTILITY.PullEventTimeout("modem_message", timeout)
         until (modem_message == nil) or (modem_message[3] == channel)
@@ -138,7 +138,7 @@ local function UTILITY_FUNC()
             local result = nil
 
             local function Event()
-                result = os.pullEvent(event)
+                result = { os.pullEvent(event) }
             end
 
             local function Timeout()

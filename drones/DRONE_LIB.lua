@@ -23,6 +23,12 @@ if args[1] == "update" then
     return;
 end
 
+local function debugLog(...)
+    if args[1] == "debug" then
+        print(...)
+    end
+end
+
 local peripherals = {
     modem = peripheral.find("modem"),
     helm = peripheral.find("ship_helm"),
@@ -45,11 +51,14 @@ local function SearchForParent()
 
     if result then
         parentChannel = result[1];
+        debugLog("Found parent", result[1])
     end
 end
 
 while true do
-    if not parentChannel then
+    debugLog(parentChannel)
+
+    if parentChannel == nil then
         SearchForParent()
     else
         PingParent(peripherals.reader.getWorldspacePosition())
