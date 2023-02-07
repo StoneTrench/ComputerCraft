@@ -38,7 +38,9 @@ local function INSTALLER_FUNC()
             local files = {}
 
             for val in package:gmatch("([^\n]+)") do
-                table.insert(files, val);
+                if not ((#val == 0) or (val:sub(1, 2) == "//")) then
+                    table.insert(files, val);
+                end
             end
 
             print("[" .. table.concat(files, ", ", 2) .. "]")
