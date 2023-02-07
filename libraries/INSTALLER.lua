@@ -35,7 +35,7 @@ local function INSTALLER_FUNC()
 
             local files = {}
 
-            for val in package:gmatch("\n") do
+            for val in package:gmatch("([^\n]+)") do
                 table.insert(files, val);
             end
 
