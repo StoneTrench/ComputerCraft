@@ -4,8 +4,6 @@ libraries/UTILITY.lua
 libraries/GIT.lua
 libraries/MODEM_PROT.lua
 other/git.lua
-
 drones/DRONE_LIB.lua
-libraries/INSTALLER.lua
-
 package.inst
+libraries/INSTALLER.lua
