@@ -42,6 +42,8 @@ local function INSTALLER_FUNC()
             print("[" .. table.concat(files, ", ") .. "]")
 
             for i = 2, #files, 1 do
+                fs.makeDir(files[i])
+
                 local fileStream = fs.open(files[i], "w");
 
                 local data = get(files[1] .. files[i]);
