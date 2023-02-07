@@ -27,7 +27,10 @@ local function INSTALLER_FUNC()
 
     return {
         install = function(package_address, destinationFolder)
-            if destinationFolder == nil then destinationFolder = "" end
+            if destinationFolder == nil then destinationFolder = "." end
+            if destinationFolder:sub(#destinationFolder, #destinationFolder) ~= "/" then
+                destinationFolder = destinationFolder .. "/";
+            end
 
             local package = get(package_address)
 
