@@ -1,5 +1,5 @@
 local function DRONE_FUNC()
-    require("libraries.UTILITY")
+    require(".libraries.UTILITY")
 
     local mainPeripherals = {
         helm = nil,

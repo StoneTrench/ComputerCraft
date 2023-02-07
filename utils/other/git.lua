@@ -59,7 +59,7 @@ if args[1] == "get" then
     -- Determine file to download
     local sPath = shell.resolve(args[3])
     if fs.exists(sPath) then
-        if contains(args, "-f") then
+        if contains(args, "force") then
             shell.execute("delete " .. sPath);
         else
             printError("File already exists!")
