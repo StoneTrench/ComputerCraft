@@ -1,0 +1,26 @@
+{
+    "Lua.diagnostics.globals": [
+        "fs",
+        "peripheral",
+        "term",
+        "Text",
+        "colors",
+        "sleep",
+        "lfs",
+        "shell",
+        "http",
+        "printError",
+        "self",
+        "bit",
+        "parallel",
+        "textutils",
+        "settings"
+    ],
+    "Lua.diagnostics.disable": [
+        "undefined-field"
+    ],
+    "Lua.workspace.library": [
+        "${3rd}/lfs/library"
+    ],
+    "Lua.workspace.checkThirdParty": false
+}

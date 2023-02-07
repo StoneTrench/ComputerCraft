@@ -1,5 +1,5 @@
 local function S_COMPILER_FUNC()
-    require("UTILITY")
+    require("libraries.UTILITY")
 
     local function HandleCompilerError(message)
         error("\nCompiler error: " .. message)
