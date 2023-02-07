@@ -10,7 +10,7 @@ local function DRONE_FUNC()
 
     return {
         version = function ()
-            return "1.0.1"
+            return "1.0.2-a.1"
         end,
         Initialize = function()
             mainPeripherals.helm = peripheral.find("ship_helm");
@@ -18,10 +18,6 @@ local function DRONE_FUNC()
                     function(e) return e.isWireless() end);
             mainPeripherals.reader = peripheral.find("ship_reader")
             mainPeripherals.radar = peripheral.find("radar")
-
-            if DRONE.hasHelm() then
-                mainPeripherals.helm.assemble();
-            end
         end,
         hasHelm = function()
             return mainPeripherals.helm ~= nil;
