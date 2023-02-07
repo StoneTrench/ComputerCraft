@@ -26,14 +26,16 @@ local function INSTALLER_FUNC()
     end
 
     return {
+        version = function()
+            return "1.0.0";
+        end,
         install = function(package_address, destinationFolder, silent)
             if destinationFolder == nil then destinationFolder = "." end
             if destinationFolder:sub(#destinationFolder, #destinationFolder) ~= "/" then
-                destinationFolder = destinationFolder .. "/";
+                destinationFolder =
+                    destinationFolder .. "/";
             end
-            if silent == nil then
-                silent = false
-            end
+            if silent == nil then silent = false end
 
             local package = get(package_address)
 
@@ -62,14 +64,18 @@ local function INSTALLER_FUNC()
 
                 local data = get(files[1] .. files[i]);
                 if data == nil then
-                    printError("Failed to get file: " .. files[i] .. "!");
+                    if not silent then
+                        printError("Failed to get file: " .. files[i] .. "!");
+                    end
                 else
                     fileStream.write(data);
                     fileStream.close();
                 end
             end
 
-            print("Done.")
+            if not silent then
+                print("Done.")
+            end
         end
     }
 end
