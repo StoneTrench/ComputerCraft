@@ -26,10 +26,13 @@ local function INSTALLER_FUNC()
     end
 
     return {
-        install = function(package_address, destinationFolder)
+        install = function(package_address, destinationFolder, silent)
             if destinationFolder == nil then destinationFolder = "." end
             if destinationFolder:sub(#destinationFolder, #destinationFolder) ~= "/" then
                 destinationFolder = destinationFolder .. "/";
+            end
+            if silent == nil then
+                silent = false
             end
 
             local package = get(package_address)
@@ -46,10 +49,15 @@ local function INSTALLER_FUNC()
                 end
             end
 
-            print("[" .. table.concat(files, ", ", 2) .. "]")
-
             for i = 2, #files, 1 do
-                fs.makeDir(destinationFolder .. files[i]:match("(.*/)"))
+                local dirPath = files[i]:match("(.*/)");
+                if dirPath == nil then dirPath = "" end
+                fs.makeDir(destinationFolder .. dirPath)
+
+                if not silent then
+                    print("Downloading: " .. destinationFolder .. files[i])
+                end
+
                 local fileStream = fs.open(destinationFolder .. files[i], "w");
 
                 local data = get(files[1] .. files[i]);
