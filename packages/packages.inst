@@ -1,0 +1,14 @@
+https://raw.githubusercontent.com/StoneTrench/ComputerCraft/master/
+
+// Basically this file contains the paths to install all the files i need at once :)
+
+packages/libraries/UTILITY.lua
+packages/libraries/GIT.lua
+packages/libraries/MODEM_PROT.lua
+packages/libraries/ENCRYPT.lua
+packages/libraries/INSTALLER.lua
+
+packages/drones/DRONE_LIB.lua
+packages/packages.inst
+
+// version 1.0.1

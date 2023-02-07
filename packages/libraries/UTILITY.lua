@@ -89,6 +89,9 @@ local function UTILITY_FUNC()
     end
 
     return {
+        version = function ()
+            return "1.0.0"
+        end,
         eval = function(lua_code, ...)
             local func, err = load(lua_code, "lua_code", "t", _ENV)
             if not func then

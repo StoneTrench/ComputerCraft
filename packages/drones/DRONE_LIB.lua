@@ -1,5 +1,5 @@
 local function DRONE_FUNC()
-    require(".libraries.UTILITY")
+    require(".packages.libraries.UTILITY")
 
     local mainPeripherals = {
         helm = nil,
@@ -9,6 +9,9 @@ local function DRONE_FUNC()
     }
 
     return {
+        version = function ()
+            return "1.0.0"
+        end,
         Initialize = function()
             mainPeripherals.helm = peripheral.find("helm");
             mainPeripherals.wireless_modem = UTILITY.table.find({ peripheral.find("modem") },
