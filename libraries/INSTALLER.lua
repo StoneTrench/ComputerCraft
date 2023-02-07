@@ -42,7 +42,7 @@ local function INSTALLER_FUNC()
             print("[" .. table.concat(files, ", ") .. "]")
 
             for i = 2, #files, 1 do
-                fs.makeDir(files[i])
+                fs.makeDir(files[i]:match("(.*/)"))
 
                 local fileStream = fs.open(files[i], "w");
 
