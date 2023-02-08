@@ -12,3 +12,5 @@ packages/drones/DRONE_LIB.lua
 packages/packages.inst
 
 // version 1.0.1
+
+test.lua

@@ -52,8 +52,7 @@ local function INSTALLER_FUNC()
             end
 
             for i = 2, #files, 1 do
-                local dirPath = files[i]:match("(.*/)");
-                if dirPath == nil then dirPath = "" end
+                local dirPath = fs.getDir(files[i]) .. "/";
                 fs.makeDir(destinationFolder .. dirPath)
 
                 if not silent then
