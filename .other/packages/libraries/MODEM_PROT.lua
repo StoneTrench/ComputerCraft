@@ -10,7 +10,7 @@ local function M_PROTOCOL_FUNC()
         -- event, side, channel, replyChannel, message, distance
         local modem_message = -1;
         repeat
-            modem_message = UTILITY.PullEventTimeout("modem_message", timeout)
+            modem_message = util.PullEventTimeout("modem_message", timeout)
         until (modem_message == nil) or (modem_message[3] == channel)
 
         if modem_message == nil then

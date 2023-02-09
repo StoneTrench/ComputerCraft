@@ -161,7 +161,7 @@ local function UTILITY_FUNC()
                         if fs.isDir(fp) then
                             t(fp, parent[name])
                         else
-                            parent[name][value] = (#UTILITY.fs.readFile(fp) * 1E-3) .. " kb"
+                            parent[name][value] = (#util.fs.readFile(fp) * 1E-3) .. " kb"
                         end
                     end
                 end
@@ -247,7 +247,7 @@ local function UTILITY_FUNC()
                 if index == nil or str == nil then
                     return nil
                 end
-                return UTILITY.string.trim(str:sub(index - size, index + size))
+                return util.string.trim(str:sub(index - size, index + size))
             end,
             startsWith = function(str, text)
                 return str:sub(1, #text) == text
@@ -305,12 +305,12 @@ local function UTILITY_FUNC()
                         wind.setTextColor(fgr)
                     end,
                     clone = function()
-                        return UTILITY.draw.createMaterial(sText, fgrcol, bkgcol);
+                        return util.draw.createMaterial(sText, fgrcol, bkgcol);
                     end
                 }
             end,
             circle = function(wind, x, y, radius, startDeg, endDeg, material)
-                if material == nil then material = UTILITY.draw.createMaterial(); end
+                if material == nil then material = util.draw.createMaterial(); end
                 if endDeg == nil then endDeg = 360 end
                 if startDeg == nil then startDeg = 0; end
 
@@ -328,7 +328,7 @@ local function UTILITY_FUNC()
                 end)
             end,
             line = function(wind, ax, ay, bx, by, material)
-                if material == nil then material = UTILITY.draw.createMaterial(); end
+                if material == nil then material = util.draw.createMaterial(); end
 
                 material.handleColor(wind, function()
                     ax = math.floor(ax)
@@ -364,19 +364,19 @@ local function UTILITY_FUNC()
                 end)
             end,
             polygon = function(wind, array, open, material)
-                if material == nil then material = UTILITY.draw.createMaterial(); end
+                if material == nil then material = util.draw.createMaterial(); end
                 if open == nil then open = false end
 
                 for i = 1, #array - 2, 2 do
-                    UTILITY.draw.line(wind, array[i], array[i + 1], array[i + 2], array[i + 3], material)
+                    util.draw.line(wind, array[i], array[i + 1], array[i + 2], array[i + 3], material)
                 end
 
                 if not open then
-                    UTILITY.draw.line(wind, array[#array - 1], array[#array], array[1], array[2], material)
+                    util.draw.line(wind, array[#array - 1], array[#array], array[1], array[2], material)
                 end
             end,
             rect = function (wind, ax, ay, bx, by, material)
-                if material == nil then material = UTILITY.draw.createMaterial(); end
+                if material == nil then material = util.draw.createMaterial(); end
                 
                 local minX = math.min(ax, bx)
                 local minY = math.min(ay, by)
@@ -396,4 +396,4 @@ local function UTILITY_FUNC()
     }
 end
 
-UTILITY = UTILITY_FUNC();
+util = UTILITY_FUNC();

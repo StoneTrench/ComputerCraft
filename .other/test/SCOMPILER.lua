@@ -15,7 +15,7 @@ local function S_COMPILER_FUNC()
 
         local charIndexes = {};
 
-        for index in UTILITY.string.findIndex(string, pattern) do
+        for index in util.string.findIndex(string, pattern) do
             if useEscapeCharacter then
                 if CheckForEscapeCharacter(string, index) then
                     table.insert(charIndexes, #charIndexes + 1, index);
@@ -46,9 +46,9 @@ local function S_COMPILER_FUNC()
     end
 
     local function FindPartnerClosingChar(string, initCharIndex, openChar, closeChar)
-        local indexes = UTILITY.IteratorToArray(UTILITY.string.findIndex(string, openChar, 1, true));
+        local indexes = util.IteratorToArray(util.string.findIndex(string, openChar, 1, true));
 
-        for value in UTILITY.string.findIndex(string, closeChar, 1, true) do
+        for value in util.string.findIndex(string, closeChar, 1, true) do
             table.insert(indexes, #indexes, value);
         end
 
@@ -81,11 +81,11 @@ local function S_COMPILER_FUNC()
         local result = {};
         local EndPattern = "[;}]";
 
-        local open = UTILITY.IteratorToArray(UTILITY.string.findIndex(code_noString, "{", 1, true));
+        local open = util.IteratorToArray(util.string.findIndex(code_noString, "{", 1, true));
         local index = open[1];
 
         if index == nil then
-            return UTILITY.string.trim(code_noString)
+            return util.string.trim(code_noString)
         end
 
         -- Handles (class, namespace, function) parsing
@@ -98,21 +98,21 @@ local function S_COMPILER_FUNC()
             else
                 objectHeaderStart = #code_noString - objectHeaderStart + 2;
             end
-            local header = UTILITY.string.trim(code_noString:sub(objectHeaderStart, index - 1));
+            local header = util.string.trim(code_noString:sub(objectHeaderStart, index - 1));
 
             local type = "unknown";
             if header:match(" ") then
-                if UTILITY.string.startsWith(header, "namespace") then
+                if util.string.startsWith(header, "namespace") then
                     type = "namespace"
-                elseif UTILITY.string.startsWith(header, "class") then
+                elseif util.string.startsWith(header, "class") then
                     type = "class"
-                elseif UTILITY.string.startsWith(header, "func") and UTILITY.string.endsWith(header, ")") then
+                elseif util.string.startsWith(header, "func") and util.string.endsWith(header, ")") then
                     type = "function"
                 end
 
                 header = header:match("%s+(.*)")
             elseif parentObject.type == "class" and header:match(parentObject.header) and
-                UTILITY.string.endsWith(header, ")") then
+                util.string.endsWith(header, ")") then
                 type = "constructor"
             end
 
@@ -143,7 +143,7 @@ local function S_COMPILER_FUNC()
         -- Handles (variable, declaration) parsing
         local variables = FindIndexesEncompasedByPattern(code_noString_noObject, "var(.*)[;,%)]", false)
         print(textutils.serialiseJSON(variables))
-        print(UTILITY.table.reduce(UTILITY.table.map(variables, function(e)
+        print(util.table.reduce(util.table.map(variables, function(e)
             return code_noString_noObject:sub(e, e + 3)
         end), function(a, b)
             return a .. b
@@ -154,7 +154,7 @@ local function S_COMPILER_FUNC()
 
     return {
         Compile = function(localPath, outputPath)
-            local source_code = UTILITY.fs.readFile(shell.resolve(localPath))
+            local source_code = util.fs.readFile(shell.resolve(localPath))
 
             local table_string_inside, table_string_outside = SeparateInsideAndOutside(source_code, "\"", true);
 
@@ -162,7 +162,7 @@ local function S_COMPILER_FUNC()
 
             local Objects = parseObjects(code_noString)
 
-            UTILITY.fs.writeFile(outputPath, textutils.serializeJSON(Objects))
+            util.fs.writeFile(outputPath, textutils.serializeJSON(Objects))
         end
     }
 end

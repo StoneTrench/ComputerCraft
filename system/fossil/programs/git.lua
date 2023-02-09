@@ -1,4 +1,4 @@
-local function GIT_FUNC()
+local function git_FUNC()
     if not http then
         error("Git requires the http API")
         error("Set http.enabled to true in the config")
@@ -7,7 +7,7 @@ local function GIT_FUNC()
 
     local function get(address)
         local path = address:gsub("https://github.com/", ""):gsub("https://raw.githubusercontent.com/", ""):gsub("blob/"
-            , "")
+                , "")
 
         local response, err = http.get("https://raw.githubusercontent.com/" .. path)
 
@@ -45,4 +45,4 @@ local function GIT_FUNC()
     }
 end
 
-GIT = GIT_FUNC();
+git = git_FUNC();

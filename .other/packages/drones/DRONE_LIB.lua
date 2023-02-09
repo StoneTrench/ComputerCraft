@@ -14,7 +14,7 @@ local function DRONE_FUNC()
         end,
         Initialize = function()
             mainPeripherals.helm = peripheral.find("ship_helm");
-            mainPeripherals.wireless_modem = UTILITY.table.find({ peripheral.find("modem") },
+            mainPeripherals.wireless_modem = util.table.find({ peripheral.find("modem") },
                     function(e) return e.isWireless() end);
             mainPeripherals.reader = peripheral.find("ship_reader")
             mainPeripherals.radar = peripheral.find("radar")

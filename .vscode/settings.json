@@ -14,10 +14,13 @@
         "bit",
         "parallel",
         "textutils",
-        "settings"
+        "settings",
+        "read"
     ],
     "Lua.diagnostics.disable": [
-        "undefined-field"
+        "undefined-field",
+        "lowercase-global",
+        "cast-local-type"
     ],
     "Lua.workspace.library": [
         "${3rd}/lfs/library"

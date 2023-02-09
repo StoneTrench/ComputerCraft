@@ -1,6 +1,4 @@
-local function SPAC_FUNC()
-    local lualzw = require(".packages.spacker.lualzw")
-
+local function SZIP_FUNC()
     return {
         packFiles = function(directory, destination)
             if destination == nil then destination = fs.getDir(directory) .. "/" end
@@ -89,6 +87,4 @@ local function SPAC_FUNC()
     }
 end
 
-print(shell.getRunningProgram())
-print((...)[0])
-SPAC = SPAC_FUNC();
+SZIP = SZIP_FUNC();

@@ -4,13 +4,13 @@ term.clear()
 
 local wind = window.create(term.current(), 8, 9, 16, 16)
 
-UTILITY.draw.rect(wind, 1, 1, 16, 16, UTILITY.draw.createMaterial(" ", colors.white, colors.orange))
-UTILITY.draw.polygon(wind, {
+util.draw.rect(wind, 1, 1, 16, 16, util.draw.createMaterial(" ", colors.white, colors.orange))
+util.draw.polygon(wind, {
     1, 1,
     16, 1,
     16, 16,
     1, 16
-}, false, UTILITY.draw.createMaterial("#", colors.white, colors.orange))
+}, false, util.draw.createMaterial("#", colors.white, colors.orange))
 term.setCursorPos(1, 1)
 
 -- local x, y = term.getSize()

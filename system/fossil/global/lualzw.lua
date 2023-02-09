@@ -158,7 +158,7 @@ local function decompress(input)
     return tconcat(result)
 end
 
-return {
+_G.lualzw = {
     compress = compress,
     decompress = decompress,
 }
