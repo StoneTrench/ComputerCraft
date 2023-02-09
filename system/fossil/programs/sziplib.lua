@@ -55,6 +55,15 @@ local function SZIP_FUNC()
             fileStream.write(RedData)
             fileStream.close()
         end,
+        decompress = function (data)
+            local redData, err = lualzw.decompress(data);
+
+            if redData == nil then
+                error("Failed to decompress the file!\n" .. err)
+            end
+
+            return textutils.unserialize(redData);
+        end,
         unpackFiles = function(packagePath, destination)
             packagePath = shell.resolve(packagePath);
             destination = shell.resolve(destination);
@@ -67,13 +76,7 @@ local function SZIP_FUNC()
             end
 
             local fileStream = fs.open(packagePath, "rb")
-            local redData, err = lualzw.decompress(fileStream.readAll());
-
-            if redData == nil then
-                error("Failed to decompress the package!\n" .. err)
-            end
-
-            local data = textutils.unserialize(redData);
+            local data = SZIP.decompress(fileStream.readAll())
             fileStream.close();
 
             for key, value in pairs(data.files) do

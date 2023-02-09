@@ -1,8 +1,9 @@
 local function printUsage()
     local programName = fs.getName(shell.getRunningProgram():gsub(".lua", ""))
     console.log("Usages:\n")
-    console.log(programName .. " get <address>\n")
-    console.log(programName .. " install <address>\n")
+    console.log(programName .. " get <name>\n")
+    console.log(programName .. " search <name>\n")
+    console.log(programName .. " scan\n")
 end
 
 local args = { ... }
@@ -23,9 +24,20 @@ require(F.PATHS.programs .. "pkgmngr")
 
 if args[1] == "get" then
 
+    
+
+elseif args[1] == "search" then
+
+    console.log(table.concat(util.table.map(pkgmngr.find(args[2]), function (e)
+        return e.name.." -> \""..e.address:sub(#e.address - 16, #e.address).."\""
+    end), "\n").."\n")
+
 elseif args[1] == "list" then
-    console.log(pkgmngr.getPackages())
+
+    console.log(pkgmngr.getPackages().."\n")
+
 elseif "scan" then
+
     console.log("Scanning...\n")
     local locals = pkgmngr.scanLocalPackages()
 
@@ -42,4 +54,5 @@ elseif "scan" then
     end
 
     console.log("Done scanning " .. #locals .. " packages.\n")
+
 end

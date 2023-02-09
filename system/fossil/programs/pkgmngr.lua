@@ -1,21 +1,66 @@
 local function pkgmngr_FUNC()
-    local packageFileName = "package.json";
     require(F.PATHS.programs .. "git")
     require(F.PATHS.programs .. "sziplib")
 
-    local packageListAddresses = {
-        "https://github.com/StoneTrench/ComputerCraft/blob/master/packages.list"
-    }
+    local packageFileName = "package.json";
+    local packageAddrassesFile = F.PATHS.programs .. ".pkgListAddr"
+
+    local packageListAddresses = textutils.unserialise(util.fs.readFile(packageAddrassesFile))
+
+    local packageList = {};
 
     return {
         removePackageListAddress = function(index)
             table.remove(packageListAddresses, index)
+            util.fs.writeFile(packageAddrassesFile, textutils.serialise(packageListAddresses))
         end,
         addPackageListAddress = function(address)
             table.insert(packageListAddresses, address)
+            util.fs.writeFile(packageAddrassesFile, textutils.serialise(packageListAddresses))
         end,
         getPackageListAddress = function()
             return util.clone(packageListAddresses)
+        end,
+        refreshPackageList = function()
+            packageList = util.table.reduce(util.table.map(packageListAddresses, function(e)
+                    local rec = git.get(e)
+
+                    if rec == nil then
+                        return { "Failed to get package list." }
+                    end
+
+                    local result = {};
+
+                    for line in rec:gmatch("([^\n]+)") do
+                        table.insert(result, {
+                            metadata = pkgmngr.getPackageMetadata(line),
+                            address = line,
+                        })
+                    end
+
+                    return result;
+                end), function(a, b)
+                    return util.table.combine(a, b)
+                end)
+        end,
+        getPackageMetadata = function (address)
+            local rec, err = git.get(address);
+
+            if rec == nil then
+                error("Address not found! "..(address))
+                return nil;
+            end
+
+            console.log(rec)
+
+            local packagef = textutils.unserializeJSON(SZIP.decompress(rec)[packageFileName]);
+
+            return packagef;
+        end,
+        find = function(name)
+            return util.table.filter(pkgmngr.getPackages(), function(e)
+                    return e.name:match(name);
+                end)
         end,
         download = function(address)
             local rec = git.get(address)
@@ -30,26 +75,7 @@ local function pkgmngr_FUNC()
             util.fs.writeFile(downloadPath, rec)
         end,
         getPackages = function()
-            return util.table.reduce(util.table.map(packageListAddresses, function(e)
-                    local rec = git.get(e)
-
-                    if rec == nil then
-                        return { "Failed to get package list." }
-                    end
-
-                    local result = {};
-
-                    for line in rec:gmatch("([^\n]+)") do
-                        table.insert(result, {
-                            name = fs.getName(line),
-                            address = line,
-                        })
-                    end
-
-                    return result;
-                end), function(a, b)
-                    return util.table.combine(a, b)
-                end)
+            return util.clone(packageList)
         end,
         scanLocalPackages = function()
             local packages = util.table.map(util.fs.findFiles(F.PATHS.packages, packageFileName), function(e)
@@ -106,3 +132,4 @@ local function pkgmngr_FUNC()
 end
 
 pkgmngr = pkgmngr_FUNC();
+pkgmngr.refreshPackageList();

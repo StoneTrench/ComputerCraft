@@ -12,7 +12,7 @@ local function console_FUNC()
 
     return {
         version = function()
-            return "0.1.0"
+            return "0.1.1"
         end,
         wind = term,
         _tCommandHistory = history,
@@ -69,9 +69,14 @@ local function console_FUNC()
 
                 if char == "\n" then
                     console.wind.setCursorPos(1, y + 1);
-                elseif x > w then
+                    disableChar = true;
+                end
+                if x > w then
                     console.wind.setCursorPos(1, y + 1);
-                elseif (not disableWrite) and (not disableChar) then
+                end
+
+
+                if (not disableWrite) and (not disableChar) then
                     console.wind.write(char)
                 end
                 disableChar = false
@@ -81,7 +86,7 @@ local function console_FUNC()
             console.log(console.getColorSymbol("yellow"))
             console.log(...)
         end,
-        clear = function ()
+        clear = function()
             console.wind.setCursorPos(1, 1)
             console.wind.clear();
         end,
