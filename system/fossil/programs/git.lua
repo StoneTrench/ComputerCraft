@@ -5,30 +5,29 @@ local function git_FUNC()
         return
     end
 
-    local function get(address)
-        local path = address:gsub("https://github.com/", ""):gsub("https://raw.githubusercontent.com/", ""):gsub("blob/"
-                , "")
+    return {
+        get = function(address)
+            local path = address:gsub("https://github.com/", ""):gsub("https://raw.githubusercontent.com/", ""):gsub(
+                    "blob/"
+                    , "")
 
-        local response, err = http.get("https://raw.githubusercontent.com/" .. path)
+            local response, err = http.get("https://raw.githubusercontent.com/" .. path)
 
-        if response then
-            local headers = response.getResponseHeaders()
-            if not headers["Content-Type"] or not headers["Content-Type"]:find("^text/plain") then
+            if response then
+                local headers = response.getResponseHeaders()
+                if not headers["Content-Type"] or not headers["Content-Type"]:find("^text/plain") then
+                    return nil;
+                end
+
+                local data = response.readAll()
+                response.close()
+                return data;
+            else
                 return nil;
             end
-
-            local data = response.readAll()
-            response.close()
-            return data;
-        else
-            return nil;
-        end
-    end
-
-    return {
-        get = get,
+        end,
         run = function(address, ...)
-            local data = get(address)
+            local data = git.get(address)
 
             if data == nil then
                 return false;

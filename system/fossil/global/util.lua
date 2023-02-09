@@ -124,6 +124,20 @@ local function UTILITY_FUNC()
             end
             return result;
         end,
+        clone = function(orig)
+            local orig_type = type(orig)
+            local copy
+            if orig_type == 'table' then
+                copy = {}
+                for orig_key, orig_value in next, orig, nil do
+                    copy[util.clone(orig_key)] = util.clone(orig_value)
+                end
+                setmetatable(copy, util.clone(getmetatable(orig)))
+            else
+                copy = orig
+            end
+            return copy
+        end,
         fs = {
             writeFile = function(path, data)
                 local file = fs.open(path, "w");
@@ -143,7 +157,7 @@ local function UTILITY_FUNC()
                 file.close();
                 return data;
             end,
-            foreach = function (path, func)
+            foreach = function(path, func)
                 if not fs.exists(path) then
                     error("Path not found! (" .. path .. ")")
                 end
@@ -175,7 +189,7 @@ local function UTILITY_FUNC()
 
                 local result = {};
 
-                util.fs.foreach(path, function (fp)
+                util.fs.foreach(path, function(fp)
                     local lfp = fp:gsub(path, "")
 
                     local parent = util.table.getFromPath(result, fs.getDir(lfp))
@@ -200,7 +214,7 @@ local function UTILITY_FUNC()
 
                 local result = nil
 
-                util.fs.foreach(path, function (fp)
+                util.fs.foreach(path, function(fp)
                     if fs.getName(fp):match(pattern) then
                         result = fp;
                         return true;
@@ -218,7 +232,7 @@ local function UTILITY_FUNC()
 
                 local result = {}
 
-                util.fs.foreach(path, function (fp)
+                util.fs.foreach(path, function(fp)
                     if fs.getName(fp):match(pattern) then
                         table.insert(result, fp);
                     end
@@ -282,7 +296,7 @@ local function UTILITY_FUNC()
                 end
                 return nil
             end,
-            getFromPath = function (table, path)
+            getFromPath = function(table, path)
                 local prev = table;
 
                 for key in path:gmatch("([^/]+)") do
@@ -301,7 +315,7 @@ local function UTILITY_FUNC()
 
                 return prev;
             end,
-            combine = function (a, b)
+            combine = function(a, b)
                 local result = {}
                 for key, value in pairs(a) do
                     result[key] = value
