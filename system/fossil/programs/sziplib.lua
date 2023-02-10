@@ -94,6 +94,16 @@ local function SZIP_FUNC()
             end
 
             return data;
+        end,
+
+        getFileFromFiles = function (serializedFile, pattern)
+            for key, value in pairs(serializedFile.files) do
+                if value.path:match(pattern) then
+                    return value
+                end
+            end
+
+            return nil
         end
     }
 end

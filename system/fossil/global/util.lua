@@ -324,6 +324,13 @@ local function UTILITY_FUNC()
                     result[key] = value
                 end
                 return result;
+            end,
+            toArray = function(table)
+                local result = {}
+                for key, value in pairs(table) do
+                    result[#result + 1] = value
+                end
+                return result;
             end
         },
         string = {

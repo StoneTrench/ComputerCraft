@@ -35,10 +35,10 @@ local function pkgmngr_FUNC()
                         local result = {};
 
                         for line in rec:gmatch("([^\n]+)") do
-                            local meta = pkgmngr.getPackageMetadata(line);
+                            local meta = pkgmngr.packageList.getPackageMetadata(line);
                             if meta ~= nil then
                                 table.insert(result, {
-                                    metadata = meta,
+                                    meta = meta,
                                     address = line,
                                 })
                             end
@@ -59,32 +59,40 @@ local function pkgmngr_FUNC()
                     return nil;
                 end
 
-                local packagef = textutils.unserializeJSON(SZIP.decompress(rec).files[packageFileName]);
+                local packagef = textutils.unserializeJSON(SZIP.getFileFromFiles(SZIP.decompress(rec), packageFileName)
+                    .content);
                 return packagef;
             end,
             find = function(name)
-                return util.table.filter(pkgmngr.packageList.get(), function(e)
+                return util.table.toArray(util.table.filter(pkgmngr.packageList.get(), function(e)
                         return e.meta.name:match(name);
-                    end)
+                    end))
             end,
-            install = function(address)
-                local rec = git.get(address)
+            install = function(name)
+                local rec = git.get(pkgmngr.packageList.find(name)[1].address)
 
                 if rec == nil then
                     return nil;
                 end
 
                 local files = SZIP.decompress(rec)
-                local packagef = textutils.unserializeJSON(files.files[packageFileName]);
+                local packagef = textutils.unserializeJSON(SZIP.getFileFromFiles(files, packageFileName).content);
 
-                SZIP.unserializeFiles(files, fs.combine(F.PATHS.downloads, packagef.name))
+                SZIP.unserializeFiles(files, F.PATHS.packages)
+                local packagePath = pkgmngr.packageLocal.find(packagef.name)[1];
 
-                --pkgmngr.packageLocal.find(packagef.name)
+                if packagef.commands then
+                    for key, value in pairs(packagef.commands) do
+                        fs.copy(fs.combine(packagePath, value), fs.combine(F.PATHS.commands, value))
+                    end
+                end
+
+                return packagef
             end
         },
         packageLocal = {
             scan = function()
-                local packages = pkgmngr.packageLocal.get();
+                local packages = pkgmngr.packageLocal.getPaths();
 
                 local result = {};
 
@@ -131,19 +139,31 @@ local function pkgmngr_FUNC()
 
                 return result;
             end,
-            get = function()
+            getPaths = function()
                 return util.table.map(util.fs.findFiles(F.PATHS.packages, packageFileName), function(e)
-                        return fs.getDir(e)
+                        return e
                     end)
             end,
             find = function(name)
-                return util.table.filter(pkgmngr.packageLocal.get(), function(e)
-                    return e.meta.name:match(name);
-                end)
+                return util.table.toArray(util.table.filter(pkgmngr.packageLocal.getPaths(), function(e)
+                        return textutils.unserializeJSON(util.fs.readFile(e)).name:match(name);
+                    end))
+            end,
+            uninstall = function(name)
+                local packagePath = pkgmngr.packageLocal.find(name)[1]
+                local packagef = util.fs.readFile(packagePath)
+
+                if packagef.commands then
+                    for key, value in pairs(packagef.commands) do
+                        fs.delete(fs.combine(F.PATHS.commands, value))
+                    end
+                end
+
+                fs.delete(fs.getDir(packagePath))
             end
         },
     }
 end
 
 pkgmngr = pkgmngr_FUNC();
-pkgmngr.refreshPackageList();
+pkgmngr.packageList.refresh();
