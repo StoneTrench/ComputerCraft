@@ -1,0 +1,10 @@
+{
+    "name": "vs_ships",
+    "displayName": "Valkyrien Ships",
+    "description": "An api to bettern control the ships in Valkyrien Skies.",
+    "version": "0.1.0",
+    "command": "vss.lua",
+    "authors": [
+        "StoneTrench"
+    ]
+}

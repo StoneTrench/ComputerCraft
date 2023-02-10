@@ -11,61 +11,20 @@ local function git_FUNC()
                 address:gsub("https://github.com/", ""):gsub("https://raw.githubusercontent.com/", ""):gsub(
                     "blob/", "");
 
-            local function getRawText()
-                local response = http.get(rawPath)
+            local response = http.get(rawPath)
 
-                if response then
-                    local headers = response.getResponseHeaders()
-                    if not headers["Content-Type"] or not headers["Content-Type"]:find("^text/plain") then
-                        return nil;
-                    end
-
-                    local data = response.readAll()
-                    response.close()
-                    return data;
+            if response then
+                local headers = response.getResponseHeaders()
+                if not headers["Content-Type"] or not
+                    (headers["Content-Type"]:find("^text/plain") or headers["Content-Type"]:find("^application/octet-stream")) then
+                    return nil;
                 end
-                return nil;
+
+                local data = response.readAll()
+                response.close()
+                return data;
             end
-            local function getRawBinary()
-                local response = http.get(rawPath)
-
-                if response then
-                    local headers = response.getResponseHeaders()
-                    if not headers["Content-Type"] or headers["Content-Type"]:find("^application/octet-stream") then
-                        return nil;
-                    end
-
-                    --util.fs.writeFile("./gitHeader.json", textutils.serializeJSON(headers))
-
-                    local data = response.read(128)
-
-                    -- while true do
-                    --     local r = ;
-                    --     data = data .. r
-                    --     if #data > 128 then
-                    --         break;
-                    --     end
-                    -- end
-
-                    response.close()
-                    return data;
-                end
-                return nil;
-            end
-
-            local result = nil;
-
-            result = getRawText();
-            if result ~= nil then
-                return result;
-            end
-
-            result = getRawBinary();
-            if result ~= nil then
-                return result;
-            end
-
-            return result;
+            return nil;
         end,
         run = function(address, ...)
             local data = git.get(address)

@@ -21,21 +21,14 @@ end
 
 require(F.PATHS.programs .. "pkgmngr")
 
-
 if args[1] == "get" then
-
-    
-
+    pkgmngr.packageList.install(pkgmngr.packageList.find(args[2])[1])
 elseif args[1] == "search" then
-
-    console.log(table.concat(util.table.map(pkgmngr.find(args[2]), function (e)
+    console.log(table.concat(util.table.map(pkgmngr.packageList.find(args[2]), function (e)
         return e.name.." -> \""..e.address:sub(#e.address - 16, #e.address).."\""
     end), "\n").."\n")
-
 elseif args[1] == "list" then
-
-    console.log(pkgmngr.getPackages().."\n")
-
+    console.log(pkgmngr.packageList.get().."\n")
 elseif "scan" then
 
     console.log("Scanning...\n")

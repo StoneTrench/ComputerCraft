@@ -13,6 +13,55 @@ local function SZIP_FUNC()
                 error("The path was not a directory!")
             end
 
+            local data = SZIP.serializeFiles(directory)
+
+            local fileStream = fs.open(fs.combine(destination, fs.getName(directory) .. ".spac"), "w")
+
+            local RedData = SZIP.compress(data);
+
+            if RedData == nil then
+                error("Failed to compress!")
+            end
+
+            fileStream.write(RedData)
+            fileStream.close()
+        end,
+        unpackFiles = function(packagePath, destination)
+            packagePath = shell.resolve(packagePath);
+            destination = shell.resolve(destination);
+
+            if not fs.exists(packagePath) then
+                error("The file does not exist!")
+            end
+            if fs.isDir(packagePath) then
+                error("The path was a directory!")
+            end
+
+            local fileStream = fs.open(packagePath, "r")
+            local data = SZIP.decompress(fileStream.readAll())
+            fileStream.close();
+
+            SZIP.unserializeFiles(data, destination)
+        end,
+        compress = function (data)
+            return textutils.serializeJSON(data);
+        end,
+        decompress = function (data)
+            return textutils.unserializeJSON(data);
+        end,
+        unserializeFiles = function(data, destination)
+            destination = shell.resolve(destination);
+
+            for key, value in pairs(data.files) do
+                fs.makeDir(fs.getDir(fs.combine(destination, value.path)))
+
+                fileStream = fs.open(fs.combine(destination, value.path), "w");
+                fileStream.write(value.content);
+                fileStream.close();
+            end
+        end,
+        serializeFiles = function(directory)
+            directory = shell.resolve(directory);
 
             local filesToPack = {};
 
@@ -44,48 +93,7 @@ local function SZIP_FUNC()
                 fileStream.close();
             end
 
-            local fileStream = fs.open(fs.combine(destination, fs.getName(directory) .. ".spac"), "wb")
-
-            local RedData = lualzw.compress(textutils.serialise(data));
-
-            if RedData == nil then
-                error("Failed to compress!")
-            end
-
-            fileStream.write(RedData)
-            fileStream.close()
-        end,
-        decompress = function (data)
-            local redData, err = lualzw.decompress(data);
-
-            if redData == nil then
-                error("Failed to decompress the file!\n" .. err)
-            end
-
-            return textutils.unserialize(redData);
-        end,
-        unpackFiles = function(packagePath, destination)
-            packagePath = shell.resolve(packagePath);
-            destination = shell.resolve(destination);
-
-            if not fs.exists(packagePath) then
-                error("The file does not exist!")
-            end
-            if fs.isDir(packagePath) then
-                error("The path was a directory!")
-            end
-
-            local fileStream = fs.open(packagePath, "rb")
-            local data = SZIP.decompress(fileStream.readAll())
-            fileStream.close();
-
-            for key, value in pairs(data.files) do
-                fs.makeDir(fs.getDir(fs.combine(destination, value.path)))
-
-                fileStream = fs.open(fs.combine(destination, value.path), "w");
-                fileStream.write(value.content);
-                fileStream.close();
-            end
+            return data;
         end
     }
 end

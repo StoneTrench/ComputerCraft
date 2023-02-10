@@ -15,7 +15,7 @@
         "parallel",
         "textutils",
         "settings",
-        "read"
+        "read",
     ],
     "Lua.diagnostics.disable": [
         "undefined-field",
