@@ -1,8 +1,8 @@
 local function printUsage()
     local programName = fs.getName(shell.getRunningProgram():gsub(".lua", ""))
-    console.log("Usages:\n")
-    console.log(programName .. " get <code> <filename>\n")
-    console.log(programName .. " run <code> <arguments>\n")
+    console.log("Usages:")
+    console.log(programName .. " get <code> <filename>")
+    console.log(programName .. " run <code> <arguments>")
 end
 
 local args = { ... }

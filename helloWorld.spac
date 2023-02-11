@@ -1,1 +1,0 @@
-{"files":[{"content":"textutils.slowPrint(\"Hello world\")","path":"/helloWorld/hello.lua"},{"content":"{\n    \"name\": \"helloworld\",\n    \"displayName\": \"Hello World\",\n    \"description\": \"/shrug\",\n    \"version\": \"1.0.0\",\n    \"authors\": [\n        \"StoneTrench\"\n    ]\n}","path":"/helloWorld/package.json"}]}

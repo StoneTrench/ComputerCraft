@@ -1,8 +1,10 @@
 local function SZIP_FUNC()
     return {
+        getFileExtention = function ()
+            return ".szip"
+        end,
         packFiles = function(directory, destination)
             if destination == nil then destination = fs.getDir(directory) .. "/" end
-            if destination:sub(#destination, #destination) ~= "/" then destination = destination .. "/" end
 
             directory = shell.resolve(directory);
 
@@ -13,16 +15,20 @@ local function SZIP_FUNC()
                 error("The path was not a directory!")
             end
 
-            local data = SZIP.serializeFiles(directory)
-
-            local fileStream = fs.open(fs.combine(destination, fs.getName(directory) .. ".spac"), "w")
-
-            local RedData = SZIP.compress(data);
-
+            local RedData = SZIP.compress(SZIP.serializeFiles(directory));
             if RedData == nil then
                 error("Failed to compress!")
             end
 
+            if destination:sub(#destination - 5, #destination) ~= SZIP.getFileExtention() then
+                destination = destination .. SZIP.getFileExtention()
+            end
+
+            -- if fs.exists(destination) then
+            --     error("The destination already exists!")
+            -- end
+
+            local fileStream = fs.open(destination, "w")
             fileStream.write(RedData)
             fileStream.close()
         end,
@@ -43,10 +49,10 @@ local function SZIP_FUNC()
 
             SZIP.unserializeFiles(data, destination)
         end,
-        compress = function (data)
+        compress = function(data)
             return textutils.serializeJSON(data);
         end,
-        decompress = function (data)
+        decompress = function(data)
             return textutils.unserializeJSON(data);
         end,
         unserializeFiles = function(data, destination)
@@ -95,8 +101,7 @@ local function SZIP_FUNC()
 
             return data;
         end,
-
-        getFileFromFiles = function (serializedFile, pattern)
+        getFileFromFiles = function(serializedFile, pattern)
             for key, value in pairs(serializedFile.files) do
                 if value.path:match(pattern) then
                     return value

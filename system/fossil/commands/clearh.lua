@@ -1,1 +1,1 @@
-console.clearCommandHistory()
+fell.clearCommandHistory()

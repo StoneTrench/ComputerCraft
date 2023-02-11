@@ -16,11 +16,13 @@
         "textutils",
         "settings",
         "read",
+        "keys"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field",
         "lowercase-global",
-        "cast-local-type"
+        "cast-local-type",
+        "err-esc"
     ],
     "Lua.workspace.library": [
         "${3rd}/lfs/library"

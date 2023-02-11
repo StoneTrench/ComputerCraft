@@ -1,1 +1,1 @@
-require(".system.bootload")
+require(".system.fossil.bootload")

@@ -1,8 +1,8 @@
 local function printUsage()
     local programName = fs.getName(shell.getRunningProgram():gsub(".lua", ""))
     console.log("Usages:\n")
-    console.log(programName .. " pack <filepath> <destination>\n")
-    console.log(programName .. " unpack <filepath> <destination>\n")
+    console.log(programName .. " pack <filepath> <destination>")
+    console.log(programName .. " unpack <filepath> <destination>")
 end
 
 local args = { ... }

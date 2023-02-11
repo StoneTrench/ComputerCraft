@@ -1,4 +1,15 @@
 local function fell_FUNC()
+    local commandHistoryPath = fs.combine(F.PATHS.global, "../.commandHistory");
+
+    local fileStream = fs.open(commandHistoryPath, "r");
+    local history
+    if fileStream then
+        history = textutils.unserialize(fileStream.readAll()) or {};
+        fileStream.close();
+    else
+        history = {}
+    end
+
     return {
         version = function()
             return "1.0.0";
@@ -7,6 +18,8 @@ local function fell_FUNC()
             F.PATHS.commands,
             "rom/programs/",
         },
+        commandHistory = history,
+        scrollPos = 0,
         getCompletionPaths = function()
             return util.table.combine(fell.completionPaths, { [#fell.completionPaths + 1] = shell.dir() })
         end,
@@ -26,16 +39,45 @@ local function fell_FUNC()
             return nil;
         end,
         readCommand = function()
-            console.log(
-                console.getColorSymbol("green") ..
+            console.write(
+                CONSOLE.getColorSymbol("green") ..
                 os.getComputerLabel() .. " " ..
-                console.getColorSymbol("purple") ..
+                CONSOLE.getColorSymbol("purple") ..
                 fell.version() .. " " ..
-                console.getColorSymbol("yellow") .. "~/" ..
+                CONSOLE.getColorSymbol("yellow") .. "~/" ..
                 shell.dir() .. "\n" ..
-                console.getColorSymbol("white") .. "$ "
+                CONSOLE.getColorSymbol("white") .. "$ "
             )
-            local command = console.read(fell.complete)
+            local command = ""
+
+            -- parallel.waitForAny(
+            --     function()
+            command = console.read(fell.commandHistory, fell.complete)
+            --     end,
+            --     function()
+            --         while true do
+            --             local event, key, isHeld = os.pullEvent("key")
+
+            --             if key == keys.up then
+            --                 console.wind.scroll(-1)
+            --                 fell.scrollPos = fell.scrollPos - 1;
+            --             elseif key == keys.down then
+            --                 console.wind.scroll(1)
+            --                 fell.scrollPos = fell.scrollPos + 1;
+            --             end
+
+            --             sleep(0.1)
+            --         end
+            --     end
+            -- );
+
+            if fell.commandHistory[#fell.commandHistory] ~= command then
+                table.insert(fell.commandHistory, command)
+
+                local fileStream = fs.open(commandHistoryPath, "w");
+                fileStream.write(textutils.serialize(fell.commandHistory))
+                fileStream.close();
+            end
 
             local tokens = fell.fromShell.tokenise(command);
             local program = fell.getProgramPath(tokens[1]);
@@ -58,6 +100,11 @@ local function fell_FUNC()
                 end
             end
             return nil
+        end,
+        clearCommandHistory = function()
+            local fileStream = fs.open(commandHistoryPath, "w");
+            fileStream.write("{\n}")
+            fileStream.close();
         end,
         fromShell = {
             tokenise = function(...)
