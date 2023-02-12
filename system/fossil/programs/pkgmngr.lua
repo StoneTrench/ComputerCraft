@@ -158,7 +158,7 @@ local function pkgmngr_FUNC()
                 return result;
             end,
             scan = function(packageDir)
-                local meta = textutils.unserialiseJSON(util.fs.readFile(fs.combine(packageDir, packageFileName)));
+                local meta = textutils.unserialiseJSON(util.fs.readFile(packageDir));
 
                 local message = "";
                 local status = "";
@@ -246,7 +246,7 @@ local function pkgmngr_FUNC()
                         "Warning the compiler will move the command file into the package and overwite it if there's one!")
                     console.warn("Do you still wish to proceed? (y/n)")
                     console.write("\t")
-                    local option = console.read({ "y", "n" }, nil):lower()
+                    local option = console.input.read({ "y", "n" }, nil):lower()
                     if option == "n" then
                         console.log("Cancelled.")
                         return;

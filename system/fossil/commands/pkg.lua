@@ -50,6 +50,7 @@ elseif args[1] == "ls" then
 elseif args[1] == "scan" then
     console.write("Scanning...\n")
     local locals = pkgmngr.packageLocal.scanAll()
+    local counter = 0;
 
     for key, value in pairs(locals) do
         if value.status == "success" then
@@ -61,9 +62,10 @@ elseif args[1] == "scan" then
         else
             console.write(value.message .. "\n")
         end
+        counter = counter + 1;
     end
 
-    console.write("Done scanning " .. #locals .. " packages.\n")
+    console.write("Done scanning " .. counter .. " packages.\n")
 elseif args[1] == "mk" then
     pkgmngr.packageLocal.compilePackage(args[2], false)
 else

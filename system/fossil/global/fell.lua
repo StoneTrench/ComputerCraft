@@ -39,38 +39,21 @@ local function fell_FUNC()
 
             return nil;
         end,
-        readCommand = function()
-            console.write(
-                CONSOLE.getColorSymbol("green") ..
-                os.getComputerLabel() .. " " ..
-                CONSOLE.getColorSymbol("purple") ..
-                fell.version() .. " " ..
-                CONSOLE.getColorSymbol("yellow") .. "~/" ..
-                shell.dir() .. "\n" ..
-                CONSOLE.getColorSymbol("white") .. "$ "
-            )
+        readCommand = function(writePrefix, commandCompletedCallback)
+            if writePrefix then
+                console.write(
+                    CONSOLE.getColorSymbol("green") ..
+                    os.getComputerLabel() .. " " ..
+                    CONSOLE.getColorSymbol("purple") ..
+                    fell.version() .. " " ..
+                    CONSOLE.getColorSymbol("yellow") .. "~/" ..
+                    shell.dir() .. "\n" ..
+                    CONSOLE.getColorSymbol("white") .. "$ "
+                )
+            end
             local command = ""
-
-            -- parallel.waitForAny(
-            --     function()
-            command = console.read(fell.commandHistory, fell.complete)
-            --     end,
-            --     function()
-            --         while true do
-            --             local event, key, isHeld = os.pullEvent("key")
-
-            --             if key == keys.up then
-            --                 console.wind.scroll(-1)
-            --                 fell.scrollPos = fell.scrollPos - 1;
-            --             elseif key == keys.down then
-            --                 console.wind.scroll(1)
-            --                 fell.scrollPos = fell.scrollPos + 1;
-            --             end
-
-            --             sleep(0.1)
-            --         end
-            --     end
-            -- );
+            
+            command = console.input.read(fell.commandHistory, fell.complete)
 
             if fell.commandHistory[#fell.commandHistory] ~= command then
                 table.insert(fell.commandHistory, command)
@@ -84,9 +67,16 @@ local function fell_FUNC()
             local program = fell.getProgramPath(tokens[1]);
             if not program then
                 console.warn(tokens[1], "command not found!\n")
-                return
+                return;
             end
-            shell.run(program, table.unpack(tokens, 2))
+
+            threading.createThread(
+                function()
+                    shell.run(program, table.unpack(tokens, 2))
+                end,
+                commandCompletedCallback
+            )
+            return true;
         end,
         complete = function(sLine)
             if #sLine > 0 then
@@ -125,6 +115,25 @@ local function fell_FUNC()
                 return tWords
             end
         },
+        startInstance = function(name)
+            local runningCommand = false;
+            local function threadCallback(result, status)
+                threading.createThread(function()
+                    if not runningCommand then
+                        if status == "error" then
+                            printError(result[1])
+                        end
+                        if fell.readCommand(status ~= "timeout", function()
+                                runningCommand = false;
+                            end) then
+                            runningCommand = true;
+                        end
+                    end
+                end, threadCallback, 2)
+            end
+
+            threadCallback()
+        end,
     }
 end
 

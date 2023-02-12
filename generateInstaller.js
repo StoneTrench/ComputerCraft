@@ -1,20 +1,21 @@
 const fs = require("fs")
 const path = require("path")
 
+const actualSystemName = "system"
+
 const blackList = [
     "system\\packages",
     "system\\fossil\\.settings",
     "system\\commands",
     "system\\fossil\\.commandHistory"
 ]
-
 function tree(p, prev = []) {
     var files = fs.readdirSync(p)
     files.forEach(e => {
         var fullPath = path.join(p, e)
         var stats = fs.lstatSync(fullPath)
 
-        if (blackList.find(e => e == fullPath.replace("_system", "system"))) {
+        if (blackList.find(e => e == fullPath.replace(actualSystemName, "system"))) {
             return;
         }
 
@@ -22,7 +23,7 @@ function tree(p, prev = []) {
             tree(fullPath, prev)
         else
             prev.push({
-                a: fullPath.replace("_system", "system"),
+                a: fullPath.replace(actualSystemName, "system"),
                 b: fs.readFileSync(fullPath, "utf-8")
             })
     })
@@ -30,14 +31,15 @@ function tree(p, prev = []) {
 }
 
 var luaCode = `
-if fs.exists("./system") then 
-    error("Trying to overwrite current system!");
-end
+if fs.exists("./system/fossil/bootload.lua") then
+    error("System already installed!");
+    return;
+end;
 
-for a, b in pairs(textutils.unserializeJSON(|)) do 
+for a, b in pairs(textutils.unserializeJSON({1})) do 
     fs.makeDir(fs.getDir(b.a));
-
     local c = fs.open(b.a, "w");
+
     c.write(b.b);
     c.close();
 end;
@@ -49,6 +51,8 @@ d.close();
 `
 
 fs.writeFileSync("./installer.lua", (() => {
-    var [codeLeft, codeRight] = luaCode.split("|")
-    return codeLeft + JSON.stringify(JSON.stringify(tree("./_system"))) + codeRight;
+    return luaCode
+    .replace(/(\n)/g, "")
+    .split(" ").filter(e => e != "").join(" ").split("; ").join(" ")
+    .replace("{1}", JSON.stringify(JSON.stringify(tree(actualSystemName))))
 })(), "utf-8")

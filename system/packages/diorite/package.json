@@ -1,11 +1,8 @@
 {
     "name": "diorite_gui",
     "displayName": "Diorite",
-    "description": "An api to bettern control the ships in Valkyrien Skies.",
+    "description": "A GUI library for FossilOS.",
     "version": "0.1.0",
-    "commands": [
-        "vss.lua"
-    ],
     "authors": [
         "StoneTrench"
     ]

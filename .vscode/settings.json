@@ -22,7 +22,8 @@
         "undefined-field",
         "lowercase-global",
         "cast-local-type",
-        "err-esc"
+        "err-esc",
+        "undefined-global"
     ],
     "Lua.workspace.library": [
         "${3rd}/lfs/library"

@@ -1,0 +1,9 @@
+{
+    "name": "modems",
+    "displayName": "Modems",
+    "description": "More modem utilities.",
+    "version": "1.0.0",
+    "authors": [
+        "StoneTrench"
+    ]
+}

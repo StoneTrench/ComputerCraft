@@ -100,7 +100,7 @@ local function UTILITY_FUNC()
                 error(msg)
             end
         end,
-        PullEventTimeout = function(event, sec)
+        pullEventTimeout = function(event, sec)
             local result = nil
 
             local function Event()
@@ -113,6 +113,18 @@ local function UTILITY_FUNC()
 
             parallel.waitForAny(Event, Timeout)
             return result;
+        end,
+        pullEventAny = function(...)
+            local events = {}
+            local result = {}
+
+            for key, value in pairs({...}) do
+                events[#events + 1] = function()
+                    result = { os.pullEvent(value) }
+                end
+            end
+
+            return parallel.waitForAny(table.unpack(events)), result
         end,
         IteratorToArray = function(itterator)
             local result = {}
