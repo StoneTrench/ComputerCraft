@@ -1,0 +1,1 @@
+local args = { ... };local response = http.get(args[1]);local file = fs.open(fs.getName(args[1]), "w");file.write(response.readAll());file.close();response.close();
