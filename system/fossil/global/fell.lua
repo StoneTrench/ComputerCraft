@@ -40,6 +40,11 @@ local function fell_FUNC()
             return nil;
         end,
         readCommand = function(writePrefix, commandCompletedCallback)
+            _G.logger.log(CONSOLE.getColorSymbol("white") .. "$ ")
+            _G.logger.log(
+                CONSOLE.getColorSymbol("white") .. "$ "
+            )
+
             if writePrefix then
                 console.write(
                     CONSOLE.getColorSymbol("green") ..
@@ -52,7 +57,7 @@ local function fell_FUNC()
                 )
             end
             local command = ""
-            
+
             command = console.input.read(fell.commandHistory, fell.complete)
 
             if fell.commandHistory[#fell.commandHistory] ~= command then
