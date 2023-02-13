@@ -12,7 +12,7 @@ if #args < 3 then
     return
 end
 
-require(F.PATHS.programs .. "sziplib")
+require(F.PATHS.DIR.programs .. "sziplib")
 
 if args[1] == "pack" then
     SZIP.packFiles(args[2], args[3])

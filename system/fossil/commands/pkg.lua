@@ -13,6 +13,8 @@ local function printUsage()
     console.log("\tSearches for a package online.")
     console.log(programName .. " scan")
     console.log("\tScans local packages for metadata errors.")
+    console.log(programName .. " inf <name>")
+    console.log("\tPrints more data about a package online.")
 end
 
 local args = { ... }
@@ -28,7 +30,7 @@ if not http then
     return
 end
 
-require(F.PATHS.programs .. "pkgmngr")
+require(F.PATHS.DIR.programs .. "pkgmngr")
 
 if args[1] == "in" then
     pkgmngr.packageList.install(args[2], false)
@@ -36,16 +38,16 @@ elseif args[1] == "un" then
     pkgmngr.packageLocal.uninstall(args[2])
 elseif args[1] == "sr" then
     console.log(table.concat(util.table.map(pkgmngr.packageList.findByName(args[2]), function(e)
-        return e.meta.name .. " " .. (e.meta.displayName or "nil") .. " -> " .. (e.meta.version or "nil")
+        return e.packagef.name .. " " .. (e.packagef.displayName or "nil") .. " -> " .. (e.packagef.version or "nil")
     end), "\n"))
     console.log(table.concat(util.table.map(pkgmngr.packageList.findByTag(args[2]), function(e)
-        return e.meta.name .. " " .. (e.meta.displayName or "nil") .. " -> " .. (e.meta.version or "nil")
+        return e.packagef.name .. " " .. (e.packagef.displayName or "nil") .. " -> " .. (e.packagef.version or "nil")
     end), "\n"))
 elseif args[1] == "ls" then
     console.write(table.concat(util.table.map(pkgmngr.packageLocal.getPaths(), function(e)
-        local meta = textutils.unserializeJSON(util.fs.readFile(e));
+        local packagef = textutils.unserializeJSON(util.fs.readFile(e));
 
-        return meta.name .. " " .. (meta.displayName or "nil") .. " -> " .. (meta.version or "nil")
+        return packagef.name .. " " .. (packagef.displayName or "nil") .. " -> " .. (packagef.version or "nil")
     end), "\n"), "\n")
 elseif args[1] == "scan" then
     console.write("Scanning...\n")
@@ -67,7 +69,32 @@ elseif args[1] == "scan" then
 
     console.write("Done scanning " .. counter .. " packages.\n")
 elseif args[1] == "mk" then
-    pkgmngr.packageLocal.compilePackage(args[2], false)
+    pkgmngr.packageLocal.compilePackage(args[2], "./", false)
+elseif args[1] == "inf" then
+    local pk = pkgmngr.packageList.findByName(args[2])[1];
+
+    if pk then
+        local pk = pk.packagef;
+
+        if pk then
+            if pk.displayName then
+                console.log("title:", pk.displayName)
+            end
+            if pk.version then
+                console.log("version:", pk.version)
+            end
+            if pk.authors then
+                console.log("authors:", table.concat(pk.authors, ", "))
+            end
+            if pk.description then
+                console.log("desc:", pk.description)
+            end
+        else
+            console.warn("Package not found.")
+        end
+    else
+        console.warn("Package not found.")
+    end
 else
     printUsage()
 end

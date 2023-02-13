@@ -18,7 +18,7 @@ if not http then
     return
 end
 
-require(F.PATHS.programs .. "git")
+require(F.PATHS.DIR.programs .. "git")
 
 if args[1] == "get" then
     if #args == 2 then

@@ -1,9 +1,0 @@
-{
-    "name": "diorite_gui",
-    "displayName": "Diorite",
-    "description": "A GUI library for FossilOS.",
-    "version": "0.1.0",
-    "authors": [
-        "StoneTrench"
-    ]
-}

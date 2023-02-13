@@ -1,0 +1,12 @@
+{
+    "name": "quarry",
+    "displayName": "Quarry",
+    "version": "1.0.0",
+    "description": "A quarry program for turtles.",
+    "authors": [
+        "StoneTrench"
+    ],
+    "dependencies": [
+        "asr"
+    ]
+}

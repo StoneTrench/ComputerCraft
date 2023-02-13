@@ -1,9 +1,9 @@
 local function pkgmngr_FUNC()
-    require(F.PATHS.programs .. "git")
-    require(F.PATHS.programs .. "sziplib")
+    require(F.PATHS.DIR.programs .. "git")
+    require(F.PATHS.DIR.programs .. "sziplib")
 
     local packageFileName = "package.json";
-    local packageAddrassesFile = F.PATHS.programs .. ".pkgListAddr"
+    local packageAddrassesFile = F.PATHS.DIR.programs .. ".pkgListAddr"
 
     local packageListAddresses = textutils.unserialise(util.fs.readFile(packageAddrassesFile))
 
@@ -35,10 +35,10 @@ local function pkgmngr_FUNC()
                         local result = {};
 
                         for line in rec:gmatch("([^\n]+)") do
-                            local meta = pkgmngr.packageList.getPackageMetadata(line);
-                            if meta ~= nil then
+                            local packagef = pkgmngr.packageList.getPackageMetadata(line);
+                            if packagef ~= nil then
                                 table.insert(result, {
-                                    meta = meta,
+                                    packagef = packagef,
                                     address = line,
                                 })
                             end
@@ -66,8 +66,8 @@ local function pkgmngr_FUNC()
             findByName = function(name)
                 return util.table.toArray(util.table.filter(pkgmngr.packageList.get(), function(e)
                         local result = false;
-                        if e.meta.name ~= nil then
-                            result = e.meta.name:match(name)
+                        if e.packagef.name ~= nil then
+                            result = e.packagef.name:match(name)
                         end
                         return result;
                     end))
@@ -75,8 +75,8 @@ local function pkgmngr_FUNC()
             findByTag = function(tag)
                 return util.table.toArray(util.table.filter(pkgmngr.packageList.get(), function(e)
                         local result = false;
-                        if e.meta.tags ~= nil then
-                            util.table.contains(e.meta.tags, tag)
+                        if e.packagef.tags ~= nil then
+                            util.table.contains(e.packagef.tags, tag)
                         end
                         return result;
                     end))
@@ -101,16 +101,16 @@ local function pkgmngr_FUNC()
                 if packagefZIP == nil then
                     error(packageFileName .. " not found!")
                 end
-                SZIP.unserializeFiles(files, F.PATHS.packages)
+                SZIP.unserializeFiles(files, F.PATHS.DIR.packages)
 
                 local packagef = textutils.unserializeJSON(packagefZIP.content)
-                local packagePath = fs.combine(F.PATHS.packages, fs.getDir(packagefZIP.path));
+                local packagePath = fs.combine(F.PATHS.DIR.packages, fs.getDir(packagefZIP.path));
 
                 if packagef.commands then
                     console.log("Installing commands.")
                     for key, value in pairs(packagef.commands) do
                         local cmd_src = fs.combine(packagePath, value);
-                        local cmd_dest = fs.combine(F.PATHS.commands, value);
+                        local cmd_dest = fs.combine(F.PATHS.DIR.commands, value);
 
                         if not fs.exists(cmd_dest) then
                             fs.copy(cmd_src, cmd_dest)
@@ -147,9 +147,9 @@ local function pkgmngr_FUNC()
                 local result = {};
 
                 for key, value in pairs(packages) do
-                    local meta, name, status, message = pkgmngr.packageLocal.scan(value)
+                    local packagef, name, status, message = pkgmngr.packageLocal.scan(value)
                     result[name] = {
-                        meta = meta,
+                        packagef = packagef,
                         message = message,
                         status = status,
                     }
@@ -158,13 +158,13 @@ local function pkgmngr_FUNC()
                 return result;
             end,
             scan = function(packageDir)
-                local meta = textutils.unserialiseJSON(util.fs.readFile(packageDir));
+                local packagef = textutils.unserialiseJSON(util.fs.readFile(packageDir));
 
                 local message = "";
                 local status = "";
                 local name = nil;
 
-                if meta then
+                if packagef then
                     local check = {
                         "name",
                         "description",
@@ -174,12 +174,12 @@ local function pkgmngr_FUNC()
                     local missing = {}
 
                     for key, value in pairs(check) do
-                        if not meta[value] then
+                        if not packagef[value] then
                             table.insert(missing, value)
                         end
                     end
 
-                    name = (meta.displayName or meta.name or fs.getName(packageDir));
+                    name = (packagef.displayName or packagef.name or fs.getName(packageDir));
                     if #missing > 0 then
                         message = "Package " .. name .. " is missing: " .. table.concat(missing, ", ") .. "!";
                         status = "parial";
@@ -193,10 +193,10 @@ local function pkgmngr_FUNC()
                     status = "failed";
                 end
 
-                return meta, name, status, message;
+                return packagef, name, status, message;
             end,
             getPaths = function()
-                return util.table.map(util.fs.findFiles(F.PATHS.packages, packageFileName), function(e)
+                return util.table.map(util.fs.findFiles(F.PATHS.DIR.packages, packageFileName), function(e)
                         return e
                     end)
             end,
@@ -211,23 +211,29 @@ local function pkgmngr_FUNC()
 
                 if packagef.commands then
                     for key, value in pairs(packagef.commands) do
-                        fs.delete(fs.combine(F.PATHS.commands, value))
+                        fs.delete(fs.combine(F.PATHS.DIR.commands, value))
                     end
                 end
 
                 fs.delete(fs.getDir(packagePath))
             end,
-            compilePackage = function(directory, silent)
+            compilePackage = function(packageFilePath, destinationDirectory, silent, enableCommandFileWarn)
                 if silent == nil then
                     silent = true;
                 end
-                directory = shell.resolve(directory);
-
-                if not fs.exists(directory) then
-                    error(directory .. " doesn't exist!")
+                if enableCommandFileWarn == nil then
+                    enableCommandFileWarn = not silent;
                 end
 
-                local meta, name, status, message = pkgmngr.packageLocal.scan(directory)
+                packageFilePath = shell.resolve(packageFilePath);
+
+                if not fs.exists(packageFilePath) then
+                    error(packageFilePath .. " doesn't exist!")
+                end
+
+                local packagef, name, status, message = pkgmngr.packageLocal.scan(packageFilePath)
+
+                local packageDirectory = fs.getDir(packageFilePath);
 
                 if status == "failed" then
                     error(message);
@@ -241,7 +247,7 @@ local function pkgmngr_FUNC()
                     end
                 end
 
-                if not silent then
+                if enableCommandFileWarn then
                     console.warn(
                         "Warning the compiler will move the command file into the package and overwite it if there's one!")
                     console.warn("Do you still wish to proceed? (y/n)")
@@ -255,13 +261,13 @@ local function pkgmngr_FUNC()
                     end
                 end
 
-                if meta.commands then
+                if packagef.commands then
                     if not silent then
                         console.log("Copying commands.")
                     end
-                    for key, value in pairs(meta.commands) do
-                        local cmd_src = fs.combine(F.PATHS.commands, value);
-                        local cmd_dest = fs.combine(directory, value);
+                    for key, value in pairs(packagef.commands) do
+                        local cmd_src = fs.combine(F.PATHS.DIR.commands, value);
+                        local cmd_dest = fs.combine(packageDirectory, value);
 
                         fs.delete(cmd_dest)
                         fs.copy(cmd_src, cmd_dest)
@@ -270,8 +276,8 @@ local function pkgmngr_FUNC()
 
                 local fileName = name;
 
-                if meta.version then
-                    fileName = fileName .. "-" .. meta.version
+                if packagef.version then
+                    fileName = fileName .. "-" .. packagef.version
                 end
 
                 fileName = fileName .. ".spac"
@@ -279,7 +285,7 @@ local function pkgmngr_FUNC()
                     console.log("Packing " .. fileName)
                 end
 
-                SZIP.packFiles(directory, fs.combine(directory, "../" .. fileName))
+                SZIP.packFiles(packageDirectory, fs.combine(destinationDirectory, fileName))
                 if not silent then
                     console.log("Done.")
                 end

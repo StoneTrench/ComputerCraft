@@ -61,7 +61,7 @@ local function CONSOLE_FUNC()
                             local index, eventData = util.pullEventAny("key", "char")
                             local keyChar = eventData[2];
 
-                            local tabComplete = tabCompleteFunc(cons.input.string) or {};
+                            local tabComplete = tabCompleteFunc and (tabCompleteFunc(cons.input.string) or {}) or {};
 
                             if index == 1 then
                                 -- #region edit
@@ -258,10 +258,20 @@ local function CONSOLE_FUNC()
                     cons.log(...)
                     cons.write(CONSOLE.getColorSymbol("white"))
                 end,
+                error = function(...)
+                    cons.write(CONSOLE.getColorSymbol("red"))
+                    cons.log(...)
+                    cons.write(CONSOLE.getColorSymbol("white"))
+                end,
                 clear = function()
                     cons.wind.clear();
                     cons.wind.setCursorPos(1, 1);
                 end,
+                redirectGlobalCommands = function()
+                    _G.print = cons.log;
+                    _G.warn = cons.warn;
+                    _G.printError = cons.error;
+                end
             }
 
             table.insert(CONSOLES, cons);

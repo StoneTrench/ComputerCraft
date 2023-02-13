@@ -1,0 +1,1 @@
+{"files":[{"content":"{\n    \"name\": \"quarry\",\n    \"displayName\": \"Quarry\",\n    \"version\": \"1.0.0\",\n    \"description\": \"A quarry program for turtles.\",\n    \"authors\": [\n        \"StoneTrench\"\n    ],\n    \"dependencies\": [\n        \"asr\"\n    ]\n}","path":"/quarry/package.json"},{"content":"","path":"/quarry/quarry.lua"}]}

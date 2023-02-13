@@ -1,0 +1,9 @@
+{
+    "name": "perif-peripherals",
+    "displayName": "Perif",
+    "description": "More peripheral utilities.",
+    "version": "1.0.0",
+    "authors": [
+        "StoneTrench"
+    ]
+}

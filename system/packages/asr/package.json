@@ -1,0 +1,13 @@
+{
+    "name": "asr",
+    "displayName": "Automatic State Reload",
+    "description": "A library to save the current state of a machine and reload it when it restarts.",
+    "version": "1.0.0",
+    "authors": [
+        "StoneTrench"
+    ],
+    "tags": [
+        "lib",
+        "library"
+    ]
+}

@@ -1,30 +1,3 @@
-local function build_huffman_tree(freq)
-    local heap = {}
-    for i, p in pairs(freq) do
-        heap[#heap + 1] = { char = i, frequency = p }
-    end
-    table.sort(heap, function(a, b) return a.frequency < b.frequency end)
-    while #heap > 1 do
-        local left = heap[1]
-        table.remove(heap, 1)
-        local right = heap[1]
-        table.remove(heap, 1)
-        local parent = { char = '', frequency = left.frequency + right.frequency, left = left, right = right }
-        heap[#heap + 1] = parent
-        table.sort(heap, function(a, b) return a.frequency < b.frequency end)
-    end
-    return heap[1]
-end
-
-local function build_huffman_codes(node, prefix, codes)
-    if node.char ~= '' then
-        codes[node.char] = prefix
-        return
-    end
-    build_huffman_codes(node.left, prefix * 2, codes)
-    build_huffman_codes(node.right, prefix * 2 + 1, codes)
-end
-
 _G.compression = {
     lzw = {
         compress = function(str)

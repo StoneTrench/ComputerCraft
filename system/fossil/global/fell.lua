@@ -1,5 +1,5 @@
 local function fell_FUNC()
-    local commandHistoryPath = fs.combine(F.PATHS.global, "../.commandHistory");
+    local commandHistoryPath = fs.combine(F.PATHS.DIR.global, "../.commandHistory");
 
     local fileStream = fs.open(commandHistoryPath, "r");
     local history
@@ -15,8 +15,8 @@ local function fell_FUNC()
             return "1.0.0";
         end,
         completionPaths = {
-            F.PATHS.commands,
-            F.PATHS.commands_fossil,
+            F.PATHS.DIR.commands_fossil,
+            F.PATHS.DIR.commands,
             "rom/programs/",
         },
         commandHistory = history,
@@ -40,11 +40,6 @@ local function fell_FUNC()
             return nil;
         end,
         readCommand = function(writePrefix, commandCompletedCallback)
-            _G.logger.log(CONSOLE.getColorSymbol("white") .. "$ ")
-            _G.logger.log(
-                CONSOLE.getColorSymbol("white") .. "$ "
-            )
-
             if writePrefix then
                 console.write(
                     CONSOLE.getColorSymbol("green") ..
@@ -68,6 +63,9 @@ local function fell_FUNC()
                 fileStream.close();
             end
 
+            return fell.run(command, commandCompletedCallback)
+        end,
+        run = function(command, commandCompletedCallback)
             local tokens = fell.fromShell.tokenise(command);
             local program = fell.getProgramPath(tokens[1]);
             if not program then
@@ -77,11 +75,11 @@ local function fell_FUNC()
 
             threading.createThread(
                 function()
-                    shell.run(program, table.unpack(tokens, 2))
+                    shell.execute(program, table.unpack(tokens, 2))
                 end,
                 commandCompletedCallback
             )
-            return true;
+            return true
         end,
         complete = function(sLine)
             if #sLine > 0 then
@@ -121,20 +119,29 @@ local function fell_FUNC()
             end
         },
         startInstance = function(name)
+            -- print header
+            local name, version      = F.getName();
+            local license, copyright = F.getLicenseCopyright();
+            console.log(CONSOLE.getColorSymbol("yellow") .. name .. "\t" .. version)
+            console.log(license .. "\t" .. copyright .. CONSOLE.getColorSymbol("white"))
+
             local runningCommand = false;
-            local function threadCallback(result, status)
-                threading.createThread(function()
-                    if not runningCommand then
-                        if status == "error" then
-                            printError(result[1])
+            local function threadCallback(result1, status1)
+                --logger.log((result1 or "nil"), status1)
+
+                threading.createThread(
+                    function()
+                        if not runningCommand then
+                            if fell.readCommand(true, function()
+                                    runningCommand = false
+                                end)
+                            then
+                                runningCommand = true
+                            end
                         end
-                        if fell.readCommand(status ~= "timeout", function()
-                                runningCommand = false;
-                            end) then
-                            runningCommand = true;
-                        end
-                    end
-                end, threadCallback, 2)
+                    end,
+                    threadCallback
+                )
             end
 
             threadCallback()
