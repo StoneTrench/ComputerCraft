@@ -274,7 +274,7 @@ local function pkgmngr_FUNC()
                     end
                 end
 
-                local fileName = name;
+                local fileName = packagef.name;
 
                 if packagef.version then
                     fileName = fileName .. "-" .. packagef.version
