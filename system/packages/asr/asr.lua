@@ -1,5 +1,5 @@
 local function ASR_FUNC()
-    local prefix <const> = "asr_";
+    local prefix = "asr_";
 
     local function Set(parentProgram, objName, key, value)
         F.programData.set(prefix .. parentProgram, objName, key, value)
@@ -9,23 +9,23 @@ local function ASR_FUNC()
     end
 
     return {
-        createObject = function(parentProgram, srcObj)
+        createObject = function(parentProgram, srcObj, name)
             local e = {}
-            local objName = ""
 
-            for key, value in pairs(srcObj) do
+            local clone = srcObj;
+            clone.asrName = name;
+
+            for key, value in pairs(clone) do
                 e[key] = function(val)
                     if val == nil then
-                        return Get(parentProgram, objName, key)
+                        return Get(parentProgram, name, key)
                     end
-                    Set(parentProgram, objName, key, val)
+                    Set(parentProgram, name, key, val)
                     return val;
                 end
                 e[key](value);
-                objName = objName .. key:sub(1, 1);
             end
 
-            e.asrName = objName;
             return e;
         end,
         loadAll = function(parentProgram)
@@ -33,12 +33,15 @@ local function ASR_FUNC()
 
             local objects = {};
 
+            console.log(#groups)
             for key, value in pairs(groups) do
-                table.insert(objects,
-                    ASR.createObject(parentProgram, F.programData.getFullObject(prefix .. parentProgram, value)));
+                local srcObj = F.programData.getFullObject(prefix .. parentProgram, value);
+                if srcObj then
+                    table.insert(objects, ASR.createObject(parentProgram, srcObj, srcObj.asrName));
+                end
             end
 
-            return objects;
+            return table.unpack(objects);
         end
     }
 end

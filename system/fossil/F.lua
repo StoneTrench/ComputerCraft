@@ -87,13 +87,15 @@ F = {
             util.fs.writeFile(path, textutils.serializeJSON(data))
         end,
         getGroups = function(programName)
-            if not util.string.endsWith(groupName, ".json") then
-                groupName = groupName .. ".json";
-            end
             local path = fs.combine(F.PATHS.DIR.programData, programName)
 
+            if not fs.exists(path) then
+                return {}
+            end
+
             return util.table.map(fs.list(path), function(e)
-                    return e:sub(".json", "")
+                console.log(e)
+                    return e:gsub(".json", "")
                 end);
         end,
         getFullObject = function(programName, groupName)

@@ -77,17 +77,20 @@ elseif args[1] == "inf" then
         local pk = pk.packagef;
 
         if pk then
+            if pk.name then
+                console.log("name:", pk.name)
+            end
             if pk.displayName then
-                console.log("title:", pk.displayName)
+                console.log("\ttitle:", pk.displayName)
             end
             if pk.version then
-                console.log("version:", pk.version)
+                console.log("\tversion:", pk.version)
             end
             if pk.authors then
-                console.log("authors:", table.concat(pk.authors, ", "))
+                console.log("\tauthors:", table.concat(pk.authors, ", "))
             end
             if pk.description then
-                console.log("desc:", pk.description)
+                console.log("\tdesc:", pk.description)
             end
         else
             console.warn("Package not found.")
