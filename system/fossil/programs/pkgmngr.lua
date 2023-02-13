@@ -285,10 +285,12 @@ local function pkgmngr_FUNC()
                     console.log("Packing " .. fileName)
                 end
 
-                SZIP.packFiles(packageDirectory, fs.combine(destinationDirectory, fileName))
+                local filepath = SZIP.packFiles(packageDirectory, fs.combine(destinationDirectory, fileName))
                 if not silent then
                     console.log("Done.")
                 end
+
+                return filepath;
             end
         },
     }

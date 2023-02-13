@@ -31,6 +31,8 @@ local function SZIP_FUNC()
             local fileStream = fs.open(destination, "w")
             fileStream.write(RedData)
             fileStream.close()
+
+            return destination
         end,
         unpackFiles = function(packagePath, destination)
             packagePath = shell.resolve(packagePath);
