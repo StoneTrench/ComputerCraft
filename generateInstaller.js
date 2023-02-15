@@ -38,6 +38,8 @@ function tree(p, prev = []) {
 }
 
 var luaCode = `
+--[[https://raw.github.com/StoneTrench/ComputerCraft/master/installer.lua]]
+
 if fs.exists("./system/fossil/bootload.lua") then
     error("System already installed!");
     return;
