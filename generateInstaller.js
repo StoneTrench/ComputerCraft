@@ -5,9 +5,11 @@ const actualSystemName = "system"
 
 const blackList = [
     "system\\packages",
-    "system\\fossil\\.settings",
     "system\\commands",
-    "system\\fossil\\.commandHistory"
+    "system\\programData",
+    "system\\autorum",
+    "system\\fossil\\.settings",
+    "system\\fossil\\.commandHistory",
 ]
 function tree(p, prev = []) {
     var files = fs.readdirSync(p)
@@ -16,6 +18,11 @@ function tree(p, prev = []) {
         var stats = fs.lstatSync(fullPath)
 
         if (blackList.find(e => e == fullPath.replace(actualSystemName, "system"))) {
+            if (stats.isDirectory()){
+                prev.push({
+                    a: path.join(fullPath.replace(actualSystemName, "system"), "nil")
+                })
+            }
             return;
         }
 
@@ -38,10 +45,13 @@ end;
 
 for a, b in pairs(textutils.unserializeJSON({1})) do 
     fs.makeDir(fs.getDir(b.a));
-    local c = fs.open(b.a, "w");
 
-    c.write(b.b);
-    c.close();
+    if b.b ~= nil then
+        local c = fs.open(b.a, "w");
+
+        c.write(b.b);
+        c.close();
+    end;
 end;
 
 fs.makeDir("./startup/");

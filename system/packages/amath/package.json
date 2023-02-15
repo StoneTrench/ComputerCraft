@@ -1,0 +1,13 @@
+{
+    "name": "amath",
+    "displayName": "Advanced Math",
+    "description": "A library that has more math.",
+    "version": "1.0.0",
+    "authors": [
+        "StoneTrench"
+    ],
+    "tags": [
+        "lib",
+        "library"
+    ]
+}

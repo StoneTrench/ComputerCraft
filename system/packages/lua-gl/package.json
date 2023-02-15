@@ -1,0 +1,16 @@
+{
+    "name": "lua-gl",
+    "displayName": "LuaGL",
+    "description": "A cc graphics library.",
+    "version": "1.0.0",
+    "dependencies": [
+        "amath"
+    ],
+    "authors": [
+        "StoneTrench"
+    ],
+    "tags": [
+        "lib",
+        "library"
+    ]
+}

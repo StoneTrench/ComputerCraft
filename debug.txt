@@ -1,0 +1,5204 @@
+{
+  {
+    {
+      "",
+      "black",
+      "white",
+    },
+    {
+      "D",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      "",
+      "black",
+      "white",
+    },
+    {
+      "D",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      "",
+      "black",
+      "white",
+    },
+    {
+      "D",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      "",
+      "black",
+      "white",
+    },
+    {
+      "D",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      "",
+      "black",
+      "white",
+    },
+    {
+      "D",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      "",
+      "black",
+      "white",
+    },
+    {
+      "D",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      "",
+      "black",
+      "white",
+    },
+    {
+      "D",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      "",
+      "black",
+      "white",
+    },
+    {
+      "D",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "C",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "B",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      "A",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+  {
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+    {
+      " ",
+      "black",
+      "white",
+    },
+  },
+}
