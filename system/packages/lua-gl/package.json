@@ -1,5 +1,5 @@
 {
-    "name": "lua-gl",
+    "name": "lua_gl",
     "displayName": "LuaGL",
     "description": "A cc graphics library.",
     "version": "0.0.1",

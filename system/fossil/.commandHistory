@@ -100,4 +100,10 @@
   "cd ..",
   "cd system",
   "cd ..",
+  "cap",
+  "cd system/fossil",
+  "cd ..",
+  "cd system/fossil",
+  "cd ..",
+  "cap",
 }

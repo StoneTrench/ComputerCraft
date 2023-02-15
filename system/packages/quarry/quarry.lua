@@ -66,7 +66,6 @@ local function QUARRY_FUNC()
         ["down"] = 5
     }
 
-
     return {
         --[[
             -Relative x, y and z to the position the quarry was first activated
@@ -76,20 +75,19 @@ local function QUARRY_FUNC()
 
             local prevDist = 1;
             local currDist = 0;
-
+            
             while not (diffX == 0 and diffY == 0 and diffZ == 0) and prevDist >= currDist do
                 prevDist = currDist
+                
                 diffX, diffY, diffZ = x - transform.x(), y - transform.y(), z - transform.z();
-
                 QUARRY.move(GetEnumFromVector(diffX, diffY, diffZ), canBreak)
-
                 currDist = GetLength(diffX, diffY, diffZ)
-                console.log(transform.x(), transform.y(), transform.z())
+
+                console.log("diff", diffX, diffY, diffZ)
+                console.log("tr", transform.x(), transform.y(), transform.z())
             end
         end,
         move = function(direction, canBreak)
-            QUARRY.faceTowards(direction)
-
             if direction == "up" then
                 if turtle.detectUp() and canBreak then
                     if not turtle.digUp() then
@@ -107,6 +105,8 @@ local function QUARRY_FUNC()
 
                 return turtle.down();
             else
+                QUARRY.faceTowards(direction)
+                
                 if turtle.detect() and canBreak then
                     if turtle.dig() then
                         return false;

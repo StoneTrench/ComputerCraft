@@ -1,5 +1,5 @@
 {
-    "name": "stones-quarry",
+    "name": "stones_quarry",
     "displayName": "Stones' Quarry",
     "version": "1.0.0-a.1",
     "description": "A quarry program for turtles.",
