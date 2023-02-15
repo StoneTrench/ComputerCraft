@@ -104,14 +104,13 @@ local function fell_FUNC()
         end,
         resolveGlobal = function (globalPath)
             local shellDir = shell.dir();
-            
             local _, c = shellDir:gsub("/", "")
 
             if c == 0 then
                 _, c = shellDir:gsub("\\", "")
             end
-            if c == 0 and #shellDir > 0 then
-                c = 1;
+            if #shellDir > 0 then
+                c = c + 1;
             end
             
             return fs.combine(string.rep("../", c, ""), globalPath);
