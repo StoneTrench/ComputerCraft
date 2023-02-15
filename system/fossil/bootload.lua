@@ -32,7 +32,7 @@ _G.logger.clear();
 _G.console.redirectGlobalCommands();
 
 -- start fell
-fell.startInstance("0")
+fell.startInstance()
 
 -- start threading
 threading.Start();

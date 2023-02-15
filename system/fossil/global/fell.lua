@@ -15,9 +15,9 @@ local function fell_FUNC()
             return "1.0.0";
         end,
         completionPaths = {
+            "rom/programs/",
             F.PATHS.DIR.commands_fossil,
             F.PATHS.DIR.commands,
-            "rom/programs/",
         },
         commandHistory = history,
         scrollPos = 0,
@@ -27,11 +27,11 @@ local function fell_FUNC()
         getProgramPath = function(name)
             if name ~= nil then
                 for key, value in pairs(fell.getCompletionPaths()) do
-                    local completion = fs.complete(name, shell.resolve(value))
+                    local completion = fs.complete(name, value)
 
                     if #completion > 0 then
                         if completion[1] == ".lua" then
-                            return fs.combine(shell.resolve(value), name .. completion[1]);
+                            return fs.combine(value, name .. completion[1]);
                         end
                     end
                 end
@@ -73,6 +73,8 @@ local function fell_FUNC()
                 return;
             end
 
+            program = fell.resolveGlobal(program)
+
             threading.createThread(
                 function()
                     shell.execute(program, table.unpack(tokens, 2))
@@ -84,12 +86,12 @@ local function fell_FUNC()
         complete = function(sLine)
             if #sLine > 0 then
                 for key, value in pairs(fell.getCompletionPaths()) do
-                    local completion = fs.complete(sLine, shell.resolve(value))
+                    local completion = fs.complete(sLine, value)
 
                     if #completion > 0 then
                         return util.table.map(completion, function(e)
-                                return e:gsub(".lua", "")
-                            end);
+                            return e:gsub(".lua", "")
+                        end);
                     end
                 end
             end
@@ -99,6 +101,20 @@ local function fell_FUNC()
             local fileStream = fs.open(commandHistoryPath, "w");
             fileStream.write("{\n}")
             fileStream.close();
+        end,
+        resolveGlobal = function (globalPath)
+            local shellDir = shell.dir();
+            
+            local _, c = shellDir:gsub("/", "")
+
+            if c == 0 then
+                _, c = shellDir:gsub("\\", "")
+            end
+            if c == 0 and #shellDir > 0 then
+                c = 1;
+            end
+            
+            return fs.combine(string.rep("../", c, ""), globalPath);
         end,
         fromShell = {
             tokenise = function(...)
@@ -118,7 +134,7 @@ local function fell_FUNC()
                 return tWords
             end
         },
-        startInstance = function(name)
+        startInstance = function()
             -- print header
             local name, version      = F.getName();
             local license, copyright = F.getLicenseCopyright();
@@ -127,8 +143,6 @@ local function fell_FUNC()
 
             local runningCommand = false;
             local function threadCallback(result1, status1)
-                --logger.log((result1 or "nil"), status1)
-
                 threading.createThread(
                     function()
                         if not runningCommand then
