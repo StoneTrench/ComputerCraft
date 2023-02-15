@@ -11,7 +11,7 @@ local function QUARRY_FUNC()
     transform = transform or ASR.createObject(parentProgram, { x = 0, y = 0, z = 0, direction = "north", }, "transform")
 
     local function GetLength(x, y, z)
-        return math.sqrt(x * x + y * y + z * z)
+        return math.sqrt((x * x) + (y * y) + (z * z))
     end
     local function GetEnumFromVector(x, y, z)
         local max = math.max(math.abs(x), math.abs(y), math.abs(z))
@@ -46,7 +46,7 @@ local function QUARRY_FUNC()
             end
         end
 
-        return;
+        return nil, 0, 0, 0;
     end
 
     local YawIndexToEnum = {
@@ -71,23 +71,26 @@ local function QUARRY_FUNC()
             -Relative x, y and z to the position the quarry was first activated
         ]]
         moveTo = function(x, y, z, canBreak)
+            print(transform.x() .. " " .. transform.y() .. " " .. transform.z() .. " " .. transform.direction())
+
             local diffX, diffY, diffZ = x - transform.x(), y - transform.y(), z - transform.z();
 
-            local prevDist = 1;
-            local currDist = 0;
+            while diffX ~= 0 or diffY ~= 0 or diffZ ~= 0 do
+                if QUARRY.handleFuel() then
+                    error("No fuel!")
+                end
 
-            while not (diffX == 0 and diffY == 0 and diffZ == 0) and prevDist >= currDist do
-                prevDist = currDist
+                local dirs = { GetEnumFromVector(diffX, diffY, diffZ) }
+                QUARRY.move(dirs[1], dirs[2], dirs[3], dirs[4], canBreak)
 
                 diffX, diffY, diffZ = x - transform.x(), y - transform.y(), z - transform.z();
-                QUARRY.move(GetEnumFromVector(diffX, diffY, diffZ), canBreak)
-                currDist = GetLength(diffX, diffY, diffZ)
-
-                console.log("diff", diffX, diffY, diffZ)
-                console.log("tr", transform.x(), transform.y(), transform.z())
+                
+                console.log(diffX, diffY, diffZ, prevDist, currDist)
             end
         end,
         move = function(direction, x, y, z, canBreak)
+            if direction == nil then return false end
+
             if direction == "up" then
                 if turtle.detectUp() and canBreak then
                     if not turtle.digUp() then
@@ -95,38 +98,37 @@ local function QUARRY_FUNC()
                     end
                 end
 
-                if turtle.up() then
-                    transform.x(transform.x() + x)
-                    transform.y(transform.y() + y)
-                    transform.z(transform.z() + z)
+                if not turtle.up() then
+                    return false;
                 end
             elseif direction == "down" then
                 if turtle.detectDown() and canBreak then
-                    if turtle.digDown() then
+                    if not turtle.digDown() then
                         return false;
                     end
                 end
 
-                if turtle.down() then
-                    transform.x(transform.x() + x)
-                    transform.y(transform.y() + y)
-                    transform.z(transform.z() + z)
+                if not turtle.down() then
+                    return false;
                 end
             else
                 QUARRY.faceTowards(direction)
 
                 if turtle.detect() and canBreak then
-                    if turtle.dig() then
+                    if not turtle.dig() then
                         return false;
                     end
                 end
 
-                if turtle.forward() then
-                    transform.x(transform.x() + x)
-                    transform.y(transform.y() + y)
-                    transform.z(transform.z() + z)
+                if not turtle.forward() then
+                    return false;
                 end
             end
+
+            transform.x(transform.x() + x)
+            transform.y(transform.y() + y)
+            transform.z(transform.z() + z)
+            return true;
         end,
         faceTowards = function(direction)
             local current = transform.direction();
@@ -137,6 +139,38 @@ local function QUARRY_FUNC()
             for i = 1, dist, 1 do
                 turtle.turnRight()
             end
+        end,
+        handleFuel = function()
+            if turtle.getFuelLimit() == math.huge then
+                return false;
+            end
+
+            if turtle.getFuelLevel() == 0 then
+                local fuelIndex = QUARRY.findItemIndex(function(e)
+                    if e == nil then return false end
+
+                    return util.string.endsWith(e.name, "coal")
+                end)
+
+                if fuelIndex == -1 then
+                    return true;
+                end
+                turtle.refuel(1)
+            end
+
+            return false;
+        end,
+        findItemIndex = function(predicate)
+            for i = 1, 16, 1 do
+                if predicate(turtle.getItemDetail(i), i) then
+                    return i;
+                end
+            end
+
+            return -1;
+        end,
+        reset = function ()
+            ASR.whipeAll(parentProgram)
         end
     }
 end

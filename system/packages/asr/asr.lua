@@ -33,7 +33,6 @@ local function ASR_FUNC()
 
             local objects = {};
 
-            console.log(#groups)
             for key, value in pairs(groups) do
                 local srcObj = F.programData.getFullObject(prefix .. parentProgram, value);
                 if srcObj then
@@ -42,6 +41,13 @@ local function ASR_FUNC()
             end
 
             return table.unpack(objects);
+        end,
+        whipeAll = function (parentProgram)
+            local groups = F.programData.getGroups(prefix .. parentProgram);
+            
+            for key, value in pairs(groups) do
+                F.programData.delete(prefix .. parentProgram, value);
+            end
         end
     }
 end

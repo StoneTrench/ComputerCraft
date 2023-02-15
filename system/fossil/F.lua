@@ -55,24 +55,24 @@ F = {
         end
     },
     programData = {
-        getOrCreate = function(programName, groupName, dataName, default)
+        getOrCreate = function(programName, groupName, key, default)
             if not util.string.endsWith(groupName, ".json") then
                 groupName = groupName .. ".json";
             end
             local path = fs.combine(F.PATHS.DIR.programData, programName, groupName)
 
             if fs.exists(path) then
-                return textutils.unserializeJSON(util.fs.readFile(path))[dataName] or default;
+                return textutils.unserializeJSON(util.fs.readFile(path))[key] or default;
             else
                 util.fs.writeFile(path, textutils.serializeJSON(
                     {
-                        [dataName] = default
+                        [key] = default
                     }
                 ))
                 return default;
             end
         end,
-        set = function(programName, groupName, dataName, value)
+        set = function(programName, groupName, key, value)
             if not util.string.endsWith(groupName, ".json") then
                 groupName = groupName .. ".json";
             end
@@ -83,7 +83,7 @@ F = {
                 data = textutils.unserializeJSON(util.fs.readFile(path));
             end
 
-            data[dataName] = value;
+            data[key] = value;
             util.fs.writeFile(path, textutils.serializeJSON(data))
         end,
         getGroups = function(programName)
@@ -108,6 +108,16 @@ F = {
                 return textutils.unserializeJSON(util.fs.readFile(path));
             else
                 return nil;
+            end
+        end,
+        delete = function (programName, groupName)
+            if not util.string.endsWith(groupName, ".json") then
+                groupName = groupName .. ".json";
+            end
+            local path = fs.combine(F.PATHS.DIR.programData, programName, groupName)
+
+            if fs.exists(path) then
+                fs.delete(path)
             end
         end
     }

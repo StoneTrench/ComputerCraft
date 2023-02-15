@@ -1,1 +1,1 @@
-local p = "https://raw.github.com/StoneTrench/ComputerCraft/master/FullFossilOSInstaller.lua";local r = http.get(p);local f = fs.open(fs.getName(p), "w");f.write(r.readAll());f.close();r.close();shell.run(fs.getName(p));
+local p = "https://raw.github.com/StoneTrench/ComputerCraft/master/FullFossilOSInstaller.lua";local r = http.get(p);local f = fs.open(fs.getName(p), "w");f.write(r.readAll());f.close();r.close();shell.run(fs.getName(p));fs.delete(fs.getName(p));fs.delete(shell.getRunningProgram());os.reboot();

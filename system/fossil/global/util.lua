@@ -308,7 +308,9 @@ local function UTILITY_FUNC()
             getFromPath = function(table, path)
                 local prev = table;
 
-                for key in path:gmatch("([^/]+)") do
+                for key in path:gmatch("([^.]+)") do
+                    logger.log(key)
+
                     if key == "." then
                         return prev;
                     end
