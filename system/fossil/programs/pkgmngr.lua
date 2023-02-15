@@ -86,11 +86,13 @@ local function pkgmngr_FUNC()
                     silent = true;
                 end
 
+                local foundPackage = pkgmngr.packageList.findByName(name)[1];
+
                 if not silent then
-                    console.log("Installing " .. name .. "...")
+                    console.log("Installing " .. foundPackage.packagef.name .. "...")
                 end
 
-                local rec = git.get(pkgmngr.packageList.findByName(name)[1].address)
+                local rec = git.get(foundPackage.address)
 
                 if rec == nil then
                     error(name .. " not found!")

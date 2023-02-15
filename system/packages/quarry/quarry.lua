@@ -8,7 +8,7 @@ local function QUARRY_FUNC()
     local parentProgram = "stones-quarry";
 
     local transform = ASR.loadAll(parentProgram);
-    transform = transform or ASR.createObject(parentProgram, { x = 0, y = 0, z = 0, yaw = "north", }, "transform")
+    transform = transform or ASR.createObject(parentProgram, { x = 0, y = 0, z = 0, direction = "north", }, "transform")
 
     local function GetLength(x, y, z)
         return math.sqrt(x * x + y * y + z * z)
@@ -81,52 +81,47 @@ local function QUARRY_FUNC()
                 prevDist = currDist
                 diffX, diffY, diffZ = x - transform.x(), y - transform.y(), z - transform.z();
 
-                local yaw = EnumToYawIndex[GetEnumFromVector(diffX, diffY, diffZ)]
-
-                if yaw < 4 then
-                    QUARRY.move(yaw, canBreak)
-                else
-                    if yaw == 4 then
-                        QUARRY.moveUp(canBreak)
-                    elseif yaw == 5 then
-                        QUARRY.moveDown(canBreak)
-                    end
-                end
+                QUARRY.move(GetEnumFromVector(diffX, diffY, diffZ), canBreak)
 
                 currDist = GetLength(diffX, diffY, diffZ)
                 console.log(transform.x(), transform.y(), transform.z())
             end
         end,
-        move = function(yaw, canBreak)
-            QUARRY.faceTowards(yaw)
+        move = function(direction, canBreak)
+            QUARRY.faceTowards(direction)
 
-            if turtle.detect() and canBreak then
-                turtle.dig()
+            if direction == "up" then
+                if turtle.detectUp() and canBreak then
+                    if not turtle.digUp() then
+                        return false;
+                    end
+                end
+
+                return turtle.up();
+            elseif direction == "down" then
+                if turtle.detectDown() and canBreak then
+                    if turtle.digDown() then
+                        return false;
+                    end
+                end
+
+                return turtle.down();
+            else
+                if turtle.detect() and canBreak then
+                    if turtle.dig() then
+                        return false;
+                    end
+                end
+
+                return turtle.forward();
             end
-
-            turtle.forward();
         end,
-        moveUp = function(canBreak)
-            if turtle.detectUp() and canBreak then
-                turtle.digUp()
-            end
+        faceTowards = function(direction)
+            local current = transform.direction();
+            transform.direction(direction);
 
-            turtle.up();
-        end,
-        moveDown = function(canBreak)
-            if turtle.detectDown() and canBreak then
-                turtle.digDown()
-            end
+            local dist = math.abs(EnumToYawIndex[current] - EnumToYawIndex[direction]);
 
-            turtle.down();
-        end,
-        faceTowards = function(yaw)
-            yaw = math.abs(yaw) % 4;
-
-            local syaw = EnumToYawIndex[transform.yaw()];
-            local dist = math.abs(yaw - syaw)
-
-            transform.yaw(YawIndexToEnum[yaw])
             for i = 1, dist, 1 do
                 turtle.turnRight()
             end
