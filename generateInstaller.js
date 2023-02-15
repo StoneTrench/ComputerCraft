@@ -38,7 +38,7 @@ function tree(p, prev = []) {
 }
 
 var luaCode = `
---[[https://raw.github.com/StoneTrench/ComputerCraft/master/installer.lua]]
+--[[https://raw.github.com/StoneTrench/ComputerCraft/master/FullFossilOSInstaller.lua]]
 
 if fs.exists("./system/fossil/bootload.lua") then
     error("System already installed!");
@@ -62,7 +62,7 @@ d.write("require(\\".system.fossil.bootload\\")");
 d.close();
 `
 
-fs.writeFileSync("./installer.lua", (() => {
+fs.writeFileSync("./FullFossilOSInstaller.lua", (() => {
     return luaCode
     .replace(/(\n)/g, "")
     .split(" ").filter(e => e != "").join(" ").split("; ").join(" ")

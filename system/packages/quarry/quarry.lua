@@ -24,29 +24,29 @@ local function QUARRY_FUNC()
     ]]
         if max == math.abs(x) then
             if x > 0 then
-                return "east"
+                return "east", 1, 0, 0
             else
-                return "west"
+                return "west", -1, 0, 0
             end
         end
 
         if max == math.abs(y) then
             if y > 0 then
-                return "up"
+                return "up", 0, 1, 0
             else
-                return "down"
+                return "down", 0, -1, 0
             end
         end
 
         if max == math.abs(z) then
             if z > 0 then
-                return "south"
+                return "south", 0, 0, 1
             else
-                return "north"
+                return "north", 0, 0, -1
             end
         end
 
-        return nil;
+        return;
     end
 
     local YawIndexToEnum = {
@@ -75,10 +75,10 @@ local function QUARRY_FUNC()
 
             local prevDist = 1;
             local currDist = 0;
-            
+
             while not (diffX == 0 and diffY == 0 and diffZ == 0) and prevDist >= currDist do
                 prevDist = currDist
-                
+
                 diffX, diffY, diffZ = x - transform.x(), y - transform.y(), z - transform.z();
                 QUARRY.move(GetEnumFromVector(diffX, diffY, diffZ), canBreak)
                 currDist = GetLength(diffX, diffY, diffZ)
@@ -87,7 +87,7 @@ local function QUARRY_FUNC()
                 console.log("tr", transform.x(), transform.y(), transform.z())
             end
         end,
-        move = function(direction, canBreak)
+        move = function(direction, x, y, z, canBreak)
             if direction == "up" then
                 if turtle.detectUp() and canBreak then
                     if not turtle.digUp() then
@@ -95,7 +95,11 @@ local function QUARRY_FUNC()
                     end
                 end
 
-                return turtle.up();
+                if turtle.up() then
+                    transform.x(transform.x() + x)
+                    transform.y(transform.y() + y)
+                    transform.z(transform.z() + z)
+                end
             elseif direction == "down" then
                 if turtle.detectDown() and canBreak then
                     if turtle.digDown() then
@@ -103,17 +107,25 @@ local function QUARRY_FUNC()
                     end
                 end
 
-                return turtle.down();
+                if turtle.down() then
+                    transform.x(transform.x() + x)
+                    transform.y(transform.y() + y)
+                    transform.z(transform.z() + z)
+                end
             else
                 QUARRY.faceTowards(direction)
-                
+
                 if turtle.detect() and canBreak then
                     if turtle.dig() then
                         return false;
                     end
                 end
 
-                return turtle.forward();
+                if turtle.forward() then
+                    transform.x(transform.x() + x)
+                    transform.y(transform.y() + y)
+                    transform.z(transform.z() + z)
+                end
             end
         end,
         faceTowards = function(direction)
